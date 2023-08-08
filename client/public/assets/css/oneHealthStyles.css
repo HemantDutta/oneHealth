@@ -1,0 +1,29 @@
+/*Style Sheet for oneHealth*/
+/*Written by Hemant Dutta*/
+/*https://github.com/HemantDutta*/
+
+:root{
+    --accent-color: #99DBF5;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    :root {
+        scroll-behavior: smooth;
+    }
+}
+
+body {
+    margin: 0;
+    font-family: 'Signika Negative', sans-serif;
+    overflow-x: hidden;
+}
+
+.accent-color{
+    color: var(--accent-color);
+}
