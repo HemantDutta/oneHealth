@@ -2,8 +2,15 @@
 /*Written by Hemant Dutta*/
 /*https://github.com/HemantDutta*/
 
+/*Z-index Chart*/
+/*Navbar: 1000*/
+/*bigMenu: 999*/
+/*Z-index Chart End*/
+
 :root{
     --accent-color: #99DBF5;
+    --text-font-size: calc(15px + 0.34vw);
+    --bg-color: #FFEEBB
 }
 
 *,
@@ -20,10 +27,222 @@
 
 body {
     margin: 0;
-    font-family: 'Signika Negative', sans-serif;
+    font-family: 'Roboto', sans-serif;
     overflow-x: hidden;
+    background-color: var(--bg-color);
 }
 
 .accent-color{
     color: var(--accent-color);
 }
+
+/*==========Navbar==========*/
+
+nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    border-bottom-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+    overflow: hidden;
+    z-index: 1000;
+}
+
+nav .navbar-inner-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+
+nav .navbar-inner-container > * {
+    flex: 1;
+}
+
+nav .navbar-inner-container .navbar-logo img{
+    height: 60px;
+}
+
+nav .navbar-inner-container .navbar-links{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 2rem;
+}
+
+nav .navbar-inner-container .navbar-links a{
+    text-decoration: none;
+    color: #111;
+    letter-spacing: 2px;
+    transition: all 0.4s ease;
+    font-size: 18px;
+}
+
+nav .navbar-inner-container .navbar-links a:hover{
+    color: gray;
+}
+
+nav .navbar-inner-container .navbar-join-btn{
+    text-align: right;
+}
+
+nav .navbar-inner-container .navbar-join-btn button{
+    padding: 10px 24px;
+    font-weight: bold;
+    color: white;
+    background-color: #4bcdff;
+    border: none;
+    box-shadow: -5px 5px black;
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+
+nav .navbar-inner-container .navbar-hamburger-option{
+    display: none;
+}
+
+nav .navbar-inner-container .navbar-hamburger-option .hamburger {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 5px;
+    cursor: pointer;
+}
+
+nav .navbar-inner-container .navbar-hamburger-option .hamburger span {
+    background-color: #111;
+    height: 2px;
+    width: 20px;
+    transition: all 0.2s ease-in-out;
+}
+
+nav .navbar-inner-container .navbar-hamburger-option .hamburger span:nth-child(1) {
+    width: 12px;
+}
+
+nav .navbar-inner-container .navbar-hamburger-option .hamburger span:nth-child(3) {
+    width: 18px;
+}
+
+nav .navbar-inner-container .navbar-hamburger-option .hamburger.clicked span {
+    width: 20px;
+}
+
+nav .navbar-inner-container .navbar-hamburger-option .hamburger.clicked span:nth-child(2) {
+    display: none;
+}
+
+nav .navbar-inner-container .navbar-hamburger-option .hamburger.clicked span:nth-child(1) {
+    rotate: 45deg;
+}
+
+nav .navbar-inner-container .navbar-hamburger-option .hamburger.clicked span:nth-child(3) {
+    rotate: -45deg;
+    transform: translate(5px, -5px);
+}
+
+nav .navbar-inner-container .navbar-join-btn button:hover{
+    box-shadow: -8px 8px black;
+    background-color: #3ba9d3;
+}
+
+@media screen and (max-width: 991px) {
+    nav .navbar-inner-container .navbar-links{
+        display: none;
+    }
+
+    nav .navbar-inner-container .navbar-join-btn button{
+        display: none;
+    }
+
+    nav .navbar-inner-container .navbar-hamburger-option{
+        display: block;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    nav .navbar-inner-container .navbar-logo img{
+        height: 50px;
+    }
+
+    nav{
+        border-radius: 0;
+    }
+}
+
+@media screen and (max-width: 315px) {
+    nav .navbar-inner-container .navbar-logo img{
+        height: 35px;
+    }
+}
+/*==========Navbar End==========*/
+
+/*==========Big Menu==========*/
+
+.bigMenu{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    z-index: 999;
+    transition: all 0.4s cubic-bezier(.17,.67,.67,.86);
+    height: 0;
+    opacity: 0;
+}
+
+.bigMenu.opened{
+    height: 100vh;
+    opacity: 1;
+}
+
+.bigMenu .bigMenu-container{
+    background: rgba(255,255,255,0.5);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.25);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 1rem;
+    padding: 0 1rem;
+    position: relative;
+}
+
+.bigMenu .bigMenu-container .bigMenu-item{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-decoration: none;
+    color: black;
+    transition: all 0.2s ease;
+}
+
+.bigMenu .bigMenu-container .bigMenu-item:hover{
+    color: gray;
+}
+
+.bigMenu .bigMenu-container .bigMenu-item .item-text{
+    font-size: 56px;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 420px) {
+    .bigMenu .bigMenu-container .bigMenu-item .item-text{
+        font-size: 36px;
+    }
+}
+
+@media screen and (max-width: 290px) {
+    .bigMenu .bigMenu-container .bigMenu-item .item-text{
+        font-size: 32px;
+    }
+}
+/*==========Big Menu End==========*/
+
+
+
