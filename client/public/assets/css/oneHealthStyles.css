@@ -433,27 +433,43 @@ nav .navbar-inner-container .navbar-hamburger-option .hamburger.clicked span:nth
     background-color: #fff;
     padding: 1rem 2rem;
     box-shadow: -10px 10px black;
+    transition: all 0.4s ease;
 }
 
-.joinNow .joinNow-content .joinNow-login .login-form-header{
+.joinNow .joinNow-content #loginForm{
+    display: none;
+    opacity: 0;
+    transition: all 0.4s ease;
+}
+
+.joinNow .joinNow-content #regForm{
+    opacity: 0;
+    transition: all 0.4s ease;
+}
+
+.joinNow .joinNow-content #loginForm.active, .joinNow .joinNow-content #regForm.active{
+    opacity: 1;
+}
+
+.joinNow .joinNow-content .login-form-header{
     padding: 10px;
     text-align: center;
     font-size: 56px;
     font-weight: bold;
 }
 
-.joinNow .joinNow-content .joinNow-login .login-form-tag{
+.joinNow .joinNow-content .login-form-tag{
     font-size: 20px;
     color: grey;
     margin-bottom: 25px;
 }
 
-.joinNow .joinNow-content .joinNow-login form .input-field{
+.joinNow .joinNow-content form .input-field{
     position: relative;
     margin: 30px 0;
 }
 
-.joinNow .joinNow-content .joinNow-login form .input-field input{
+.joinNow .joinNow-content form .input-field input{
     background-color: #e8f1f1;
     border: none;
     padding: 1rem;
@@ -461,7 +477,7 @@ nav .navbar-inner-container .navbar-hamburger-option .hamburger.clicked span:nth
     font-size: 20px;
 }
 
-.joinNow .joinNow-content .joinNow-login form .input-field label{
+.joinNow .joinNow-content form .input-field label{
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -470,24 +486,24 @@ nav .navbar-inner-container .navbar-hamburger-option .hamburger.clicked span:nth
     padding: 0 10px;
 }
 
-.joinNow .joinNow-content .joinNow-login form .input-field:focus-within label{
+.joinNow .joinNow-content form .input-field:focus-within label{
     transform: translateY(-175%);
     background-color: #fff;
     border-radius: 0 0 20px 20px;
 }
 
-.joinNow .joinNow-content .joinNow-login form .btn-field{
+.joinNow .joinNow-content form .btn-field{
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-.joinNow .joinNow-content .joinNow-login form .btn-field span{
+.joinNow .joinNow-content form .btn-field span{
     text-decoration: underline;
     cursor: pointer;
 }
 
-.joinNow .joinNow-content .joinNow-login form .btn-field span:hover{
+.joinNow .joinNow-content form .btn-field span:hover{
     color: var(--accent-color2);
 }
 /*==========Navbar -> Join Now End==========*/

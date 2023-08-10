@@ -72,6 +72,33 @@ export const Navbar = ({joinNowTrigger}) => {
         }
     }
 
+    //Toggle Login/SignUp
+    function toggleLS(){
+        let login = document.getElementById("loginForm");
+        let reg = document.getElementById("regForm");
+
+        if(reg.classList.contains("active")){
+            reg.classList.remove("active");
+            setTimeout(()=>{
+                reg.style.display = "none";
+                login.style.display = "block";
+                setTimeout(()=>{
+                    login.classList.add("active");
+                },100)
+            },400)
+        }
+        else{
+            login.classList.remove("active");
+            setTimeout(()=>{
+                login.style.display = "none";
+                reg.style.display = "block";
+                setTimeout(()=>{
+                    reg.classList.add("active");
+                },100)
+            },400)
+        }
+    }
+
     //Resize Listener for bigMenu
     useEffect(() => {
 
@@ -151,7 +178,7 @@ export const Navbar = ({joinNowTrigger}) => {
             </div>
             <div className="joinNow" id="joinNow" onClick={clickAwayJoinNow}>
                 <div className="joinNow-content" id="jn-content">
-                    <div className="joinNow-login">
+                    <div className="joinNow-login" id="loginForm">
                         <div className="login-form-header head-font">
                             <span>Welcome back!</span>
                         </div>
@@ -170,12 +197,39 @@ export const Navbar = ({joinNowTrigger}) => {
                                 </div>
                                 <div className="btn-field">
                                     <button className="hover-btn">Log in</button>
-                                    <span>Not a member yet?</span>
+                                    <span onClick={toggleLS}>Not a member yet?</span>
                                 </div>
                             </form>
                         </div>
                     </div>
-                    <div className="joinNow-register"></div>
+                    <div className="joinNow-register active" id="regForm">
+                        <div className="login-form-header head-font">
+                            <span>Create your account</span>
+                        </div>
+                        <div className="login-form-tag">
+                            <span>Join the oneHealth family</span>
+                        </div>
+                        <div className="login-form">
+                            <form>
+                                <div className="input-field">
+                                    <label htmlFor="name"><i className="fa-regular fa-envelope"/> Enter your name</label>
+                                    <input type="text" id="name"/>
+                                </div>
+                                <div className="input-field">
+                                    <label htmlFor="regEmail"><i className="fa-regular fa-envelope"/> Email Address</label>
+                                    <input type="email" id="regEmail"/>
+                                </div>
+                                <div className="input-field">
+                                    <label htmlFor="regPass"><i className="fa-solid fa-key"/> Password</label>
+                                    <input type="password" id="regPass"/>
+                                </div>
+                                <div className="btn-field">
+                                    <button className="hover-btn">Register</button>
+                                    <span onClick={toggleLS}>Already a member?</span>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
                 </div>
             </div>
         </>
