@@ -7,8 +7,11 @@
 /*bigMenu: 999*/
 /*Z-index Chart End*/
 
-:root{
-    --accent-color: #99DBF5;
+:root {
+    --accent-color: #9ee3ff;
+    --accent-color2: #9fcaff;
+    --accent-color3: #9cfdff;
+    --accent-color4: #ffeabb;
     --text-font-size: calc(15px + 0.34vw);
     --bg-color: #FFEEBB
 }
@@ -25,20 +28,74 @@
     }
 }
 
-body {
-    margin: 0;
-    font-family: 'Roboto', sans-serif;
-    overflow-x: hidden;
-    background-color: var(--bg-color);
+/*Scrollbar*/
+
+::-webkit-scrollbar {
+    width: 10px;
 }
 
-.accent-color{
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+body {
+    margin: 0;
+    overflow-x: hidden;
+    font-family: 'Bricolage Grotesque', sans-serif;
+}
+
+.accent-color {
     color: var(--accent-color);
 }
 
+.accent-color2 {
+    color: var(--accent-color2);
+}
+
+.accent-color3 {
+    color: var(--accent-color3);
+}
+
+.accent-color4 {
+    color: var(--accent-color4);
+}
+
+/*Common CSS*/
+
+.hover-btn {
+    padding: 10px 24px;
+    font-weight: bold;
+    color: white;
+    background-color: #4bcdff;
+    border: none;
+    box-shadow: -5px 5px black;
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+
+.hover-btn:hover {
+    box-shadow: -8px 8px black;
+    background-color: #3ba9d3;
+}
+
+.head-font{
+    font-family: 'Preahvihear', sans-serif;
+}
+
+/*Common CSS End*/
+
+
 /*==========Navbar==========*/
 
-nav{
+nav {
     position: fixed;
     top: 0;
     left: 0;
@@ -50,7 +107,7 @@ nav{
     z-index: 1000;
 }
 
-nav .navbar-inner-container{
+nav .navbar-inner-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -61,18 +118,18 @@ nav .navbar-inner-container > * {
     flex: 1;
 }
 
-nav .navbar-inner-container .navbar-logo img{
+nav .navbar-inner-container .navbar-logo img {
     height: 60px;
 }
 
-nav .navbar-inner-container .navbar-links{
+nav .navbar-inner-container .navbar-links {
     display: flex;
     align-items: center;
     justify-content: center;
     column-gap: 2rem;
 }
 
-nav .navbar-inner-container .navbar-links a{
+nav .navbar-inner-container .navbar-links a {
     text-decoration: none;
     color: #111;
     letter-spacing: 2px;
@@ -80,15 +137,15 @@ nav .navbar-inner-container .navbar-links a{
     font-size: 18px;
 }
 
-nav .navbar-inner-container .navbar-links a:hover{
+nav .navbar-inner-container .navbar-links a:hover {
     color: gray;
 }
 
-nav .navbar-inner-container .navbar-join-btn{
+nav .navbar-inner-container .navbar-join-btn {
     text-align: right;
 }
 
-nav .navbar-inner-container .navbar-join-btn button{
+nav .navbar-inner-container .navbar-join-btn button {
     padding: 10px 24px;
     font-weight: bold;
     color: white;
@@ -99,7 +156,12 @@ nav .navbar-inner-container .navbar-join-btn button{
     transition: all 0.4s ease;
 }
 
-nav .navbar-inner-container .navbar-hamburger-option{
+nav .navbar-inner-container .navbar-join-btn button:hover {
+    box-shadow: -8px 8px black;
+    background-color: #3ba9d3;
+}
+
+nav .navbar-inner-container .navbar-hamburger-option {
     display: none;
 }
 
@@ -144,66 +206,63 @@ nav .navbar-inner-container .navbar-hamburger-option .hamburger.clicked span:nth
     transform: translate(5px, -5px);
 }
 
-nav .navbar-inner-container .navbar-join-btn button:hover{
-    box-shadow: -8px 8px black;
-    background-color: #3ba9d3;
-}
 
 @media screen and (max-width: 991px) {
-    nav .navbar-inner-container .navbar-links{
+    nav .navbar-inner-container .navbar-links {
         display: none;
     }
 
-    nav .navbar-inner-container .navbar-join-btn button{
+    nav .navbar-inner-container .navbar-join-btn button {
         display: none;
     }
 
-    nav .navbar-inner-container .navbar-hamburger-option{
+    nav .navbar-inner-container .navbar-hamburger-option {
         display: block;
     }
 }
 
 @media screen and (max-width: 500px) {
-    nav .navbar-inner-container .navbar-logo img{
+    nav .navbar-inner-container .navbar-logo img {
         height: 50px;
     }
 
-    nav{
+    nav {
         border-radius: 0;
     }
 }
 
 @media screen and (max-width: 315px) {
-    nav .navbar-inner-container .navbar-logo img{
+    nav .navbar-inner-container .navbar-logo img {
         height: 35px;
     }
 }
+
 /*==========Navbar End==========*/
 
 /*==========Big Menu==========*/
 
-.bigMenu{
+.bigMenu {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     padding: 10px;
     z-index: 999;
-    transition: all 0.4s cubic-bezier(.17,.67,.67,.86);
+    transition: all 0.4s cubic-bezier(.17, .67, .67, .86);
     height: 0;
     opacity: 0;
 }
 
-.bigMenu.opened{
+.bigMenu.opened {
     height: 100vh;
     opacity: 1;
 }
 
-.bigMenu .bigMenu-container{
-    background: rgba(255,255,255,0.5);
+.bigMenu .bigMenu-container {
+    background: rgba(255, 255, 255, 0.5);
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(255,255,255,0.25);
+    border: 1px solid rgba(255, 255, 255, 0.25);
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -213,7 +272,7 @@ nav .navbar-inner-container .navbar-join-btn button:hover{
     position: relative;
 }
 
-.bigMenu .bigMenu-container .bigMenu-item{
+.bigMenu .bigMenu-container .bigMenu-item {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -222,27 +281,218 @@ nav .navbar-inner-container .navbar-join-btn button:hover{
     transition: all 0.2s ease;
 }
 
-.bigMenu .bigMenu-container .bigMenu-item:hover{
+.bigMenu .bigMenu-container .bigMenu-item:hover .item-text {
     color: gray;
 }
 
-.bigMenu .bigMenu-container .bigMenu-item .item-text{
+.bigMenu .bigMenu-container .bigMenu-item {
     font-size: 56px;
     font-weight: bold;
+    cursor: pointer;
+}
+
+.bigMenu .bigMenu-container .bigMenu-item i {
+    opacity: 0;
+    transition: all 0.2s ease;
+    transform: rotate(90deg);
+}
+
+.bigMenu .bigMenu-container .bigMenu-item:hover i {
+    opacity: 1;
+    transform: rotate(0deg);
 }
 
 @media screen and (max-width: 420px) {
-    .bigMenu .bigMenu-container .bigMenu-item .item-text{
+    .bigMenu .bigMenu-container .bigMenu-item {
         font-size: 36px;
     }
 }
 
 @media screen and (max-width: 290px) {
-    .bigMenu .bigMenu-container .bigMenu-item .item-text{
+    .bigMenu .bigMenu-container .bigMenu-item .item-text {
         font-size: 32px;
     }
 }
+
 /*==========Big Menu End==========*/
+
+/*==========Home -> Hero==========*/
+
+.home-container .hero {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    background: linear-gradient(-45deg, #9AC5F4, #99DBF5, #A7ECEE, #FFEEBB);
+    background-size: 200% 200%;
+    -webkit-animation: heroGradient 10s ease infinite;
+    -moz-animation: heroGradient 10s ease infinite;
+    animation: heroGradient 10s ease infinite;
+    border-bottom-right-radius: 80px;
+    border-bottom-left-radius: 80px;
+}
+
+@-webkit-keyframes heroGradient {
+    0% {
+        background-position: 0% 50%
+    }
+    50% {
+        background-position: 100% 50%
+    }
+    100% {
+        background-position: 0% 50%
+    }
+}
+
+@-moz-keyframes heroGradient {
+    0% {
+        background-position: 0% 50%
+    }
+    50% {
+        background-position: 100% 50%
+    }
+    100% {
+        background-position: 0% 50%
+    }
+}
+
+@keyframes heroGradient {
+    0% {
+        background-position: 0% 50%
+    }
+    50% {
+        background-position: 100% 50%
+    }
+    100% {
+        background-position: 0% 50%
+    }
+}
+
+.home-container .hero .hero-content {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding-left: 3rem;
+}
+
+
+.home-container .hero .hero-content .hero-left {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+}
+
+.home-container .hero .hero-content .hero-left .hero-left-head {
+    font-size: 56px;
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 0 40px 0 40px;
+    transition: all 0.2s ease-in;
+}
+
+.home-container .hero .hero-content .hero-left .hero-left-head:hover {
+    border-radius: 40px;
+}
+
+.home-container .hero .hero-content .hero-left .hero-left-tag {
+    font-size: 18px;
+    color: #808080;
+}
+
+.home-container .hero .hero-content .hero-left .hero-left-cta button {
+    background-color: #fff;
+    color: black;
+}
+
+/*==========Home -> Hero End==========*/
+
+/*==========Navbar -> Join Now==========*/
+
+.joinNow{
+    position: fixed;
+    inset: 0;
+    margin: auto;
+    height: 100vh;
+    width: 100%;
+    z-index: 1005;
+    background-color: rgba(21,21,21,0.8);
+    display: none;
+    place-items: center;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.joinNow.opened{
+    opacity: 1;
+}
+
+.joinNow .joinNow-content{
+    background-color: #fff;
+    padding: 1rem 2rem;
+    box-shadow: -10px 10px black;
+}
+
+.joinNow .joinNow-content .joinNow-login .login-form-header{
+    padding: 10px;
+    text-align: center;
+    font-size: 56px;
+    font-weight: bold;
+}
+
+.joinNow .joinNow-content .joinNow-login .login-form-tag{
+    font-size: 20px;
+    color: grey;
+    margin-bottom: 25px;
+}
+
+.joinNow .joinNow-content .joinNow-login form .input-field{
+    position: relative;
+    margin: 30px 0;
+}
+
+.joinNow .joinNow-content .joinNow-login form .input-field input{
+    background-color: #e8f1f1;
+    border: none;
+    padding: 1rem;
+    width: 100%;
+    font-size: 20px;
+}
+
+.joinNow .joinNow-content .joinNow-login form .input-field label{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    transition: all 0.2s ease;
+    padding: 0 10px;
+}
+
+.joinNow .joinNow-content .joinNow-login form .input-field:focus-within label{
+    transform: translateY(-175%);
+    background-color: #fff;
+    border-radius: 0 0 20px 20px;
+}
+
+.joinNow .joinNow-content .joinNow-login form .btn-field{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.joinNow .joinNow-content .joinNow-login form .btn-field span{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.joinNow .joinNow-content .joinNow-login form .btn-field span:hover{
+    color: var(--accent-color2);
+}
+/*==========Navbar -> Join Now End==========*/
+
+
 
 
 
