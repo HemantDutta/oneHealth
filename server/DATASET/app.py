@@ -12,7 +12,8 @@ import joblib
 
 app = Flask(__name__)
 
-model = joblib.load('model.pkl')
+# model = joblib.load('model.pkl')
+model = load_model('BrainTumor10Epochs.h5')
 print('Model loaded. Check http://127.0.0.1:5000/')
 
 
@@ -29,7 +30,7 @@ def getResult(img):
     image = image.resize((64, 64))
     image=np.array(image)
     input_img = np.expand_dims(image, axis=0)
-    result=model.predict_classes(input_img)
+    result=model.predict(input_img)
     return result
 
 
@@ -42,7 +43,8 @@ def index():
 def upload():
     if request.method == 'POST':
         f = request.files['file']
-
+        # print("f is : ",f
+        # model = load_model(''))
         basepath = os.path.dirname(__file__)
         file_path = os.path.join(
             basepath, 'uploads', secure_filename(f.filename))
