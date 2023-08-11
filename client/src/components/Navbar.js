@@ -122,7 +122,6 @@ export const Navbar = ({joinNowTrigger}) => {
 
     }, [])
 
-
     return (
         <>
             <nav>
@@ -132,7 +131,7 @@ export const Navbar = ({joinNowTrigger}) => {
                     </div>
                     <div className="navbar-links">
                         <Link to={"/"}>Dashboard</Link>
-                        <Link to={"/"}>Diagnose</Link>
+                        <Link to={"/diagnose"}>Diagnose</Link>
                         <Link to={"/"}>About</Link>
                     </div>
                     <div className="navbar-join-btn">
@@ -162,7 +161,7 @@ export const Navbar = ({joinNowTrigger}) => {
                             <i className="fa-solid fa-arrow-right"/>
                         </div>
                     </span>
-                    <Link className="bigMenu-item">
+                    <Link className="bigMenu-item" to={"/diagnose"}>
                         <div className="item-text">Diagnose</div>
                         <div className="item-icon">
                             <i className="fa-solid fa-arrow-right"/>

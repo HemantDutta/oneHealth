@@ -25,6 +25,13 @@ export const Home = () => {
                         </div>
                         <div className="hero-right">
                             <div className="hero-right-img">
+                                <img src="assets/images/hero_right_bg_main.webp" alt="Hero Right"/>
+                                <div className="hovering-msg">
+                                    <span>Highly Accurate Predictions</span>
+                                </div>
+                                <div className="hovering-msg">
+                                    <span>Free & Easy To Use</span>
+                                </div>
                             </div>
                         </div>
                     </div>

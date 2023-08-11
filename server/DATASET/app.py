@@ -7,10 +7,14 @@ import cv2
 from keras.models import load_model
 from flask import Flask, request, render_template
 from werkzeug.utils import secure_filename
+from flask_cors import CORS, cross_origin
 import joblib
 
 
 app = Flask(__name__)
+
+cors = CORS(app)
+app.config['CORS_HEADERS'] = 'Content-Type'
 
 # model = joblib.load('model.pkl')
 model = load_model('BrainTumor10Epochs.h5')
@@ -19,9 +23,9 @@ print('Model loaded. Check http://127.0.0.1:5000/')
 
 def get_className(classNo):
 	if classNo==0:
-		return "No Brain Tumor"
+		return "Brain Tumor Not Detected"
 	elif classNo==1:
-		return "Yes Brain Tumor"
+		return "Brain Tumor Detected"
 
 
 def getResult(img):
@@ -40,6 +44,7 @@ def index():
 
 
 @app.route('/predict', methods=['GET', 'POST'])
+@cross_origin()
 def upload():
     if request.method == 'POST':
         f = request.files['file']
