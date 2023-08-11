@@ -78,7 +78,8 @@ Early detection of life-threatening conditions like brain tumors, heart diseases
 
 ### Built With 
 
-
+* [![ReactJs][ReactJs]][react-url]
+* [![Supabase][Supabase]][sup-url]
 * [![oneapi][oneapi]][oneapi-url]
 *  [![Scikit-learn ][Scikit-learn]][Scikit-learn]
 * [![onedal][onedal]][onedal-url]
@@ -141,9 +142,10 @@ Overall, the use of oneDAL in our project was crucial to achieving the level of 
 [issues-shield]: https://img.shields.io/badge/Issues-0_OPEN-purple?style=for-the-badge
 [issues-url]: https://github.com/HemantDutta/oneHealth/issues
 
-
-
-
+[Supabase]:https://shields.io/badge/supabase-black?logo=supabase&style=for-the-badge
+[sup-url]:https://supabase.com/
+[react-url]:https://react.dev/
+[ReactJs]:https://img.shields.io/badge/-ReactJs-61DAFB?logo=react&logoColor=white&style=for-the-badge
 [python]: https://img.shields.io/badge/Python-3470a3?&logoColor=white
 [python-url]: https://www.python.org/
 [jupyter]: https://img.shields.io/badge/Jupyter%20Notebook-da5b0b?&logoColor=white
