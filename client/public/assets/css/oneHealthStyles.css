@@ -252,6 +252,7 @@ nav .navbar-inner-container .navbar-hamburger-option .hamburger.clicked span:nth
     transition: all 0.4s cubic-bezier(.17, .67, .67, .86);
     height: 0;
     opacity: 0;
+    display: none;
 }
 
 .bigMenu.opened {
@@ -694,6 +695,7 @@ nav .navbar-inner-container .navbar-hamburger-option .hamburger.clicked span:nth
 .diagnose .diagnose-content .heart-model-content .model-form .input-row .input-field label{
     position: absolute;
     top: 50%;
+    left: 0;
     transform: translateY(-50%);
     font-size: 16px;
     transition: all 0.2s ease;
@@ -701,6 +703,12 @@ nav .navbar-inner-container .navbar-hamburger-option .hamburger.clicked span:nth
 }
 
 .diagnose .diagnose-content .heart-model-content .model-form .input-row .input-field:focus-within label{
+    transform: translateY(-175%);
+    background-color: #fff;
+    border-radius: 0 0 20px 20px;
+}
+
+.diagnose .diagnose-content .heart-model-content .model-form .input-row .input-field input:valid + label{
     transform: translateY(-175%);
     background-color: #fff;
     border-radius: 0 0 20px 20px;
@@ -715,5 +723,9 @@ nav .navbar-inner-container .navbar-hamburger-option .hamburger.clicked span:nth
     background-color: #fff;
     border: 1px solid black;
     color: black;
+}
+
+.diagnose .diagnose-content .heart-model-content .model-result{
+    min-height: 180px;
 }
 /*==========Diagnose End==========*/

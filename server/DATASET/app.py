@@ -48,13 +48,11 @@ def index():
     return render_template('index.html')
 
 
-@app.route('/predict', methods=['GET', 'POST'])
+@app.route('/brain', methods=['GET', 'POST'])
 @cross_origin()
 def upload():
     if request.method == 'POST':
         f = request.files['file']
-        # print("f is : ",f
-        # model = load_model(''))
         basepath = os.path.dirname(__file__)
         file_path = os.path.join(
             basepath, 'uploads', secure_filename(f.filename))
@@ -64,34 +62,34 @@ def upload():
         return result
     return None
 
-# @ app.route('/disease-predict', methods=['POST'])
-# @cross_origin()
-# def disease_prediction():
-#     title = 'Early Heart Disease Prediction'
-#
-#     if request.method == 'POST':
-#         a = int(request.form['age'])
-#         s = int(request.form['sex'])
-#         cp = int(request.form['cp'])
-#         tr = int(request.form['trestbps'])
-#         ch = int(request.form['chol'])
-#         f = int(request.form['fbs'])
-#         r = int(request.form['restecg'])
-#         th = int(request.form['thalach'])
-#         e = int(request.form['exang'])
-#         o = float(request.form['oldpeak'])
-#         sl = int(request.form['slope'])
-#         c = int(request.form['ca'])
-#         thl = int(request.form['thal'])
-#
-#         data = np.array([[ a , s , cp , tr , ch , f , r , th , e , o , sl , c , thl]])
-#         my_prediction = clf.predict(data)
-#         print(my_prediction[0])
-#         if my_prediction[0] == 0:
-#             return "You won't have any heart disease."
-#         else:
-#              return "You might have a heart disease."
-#         return "Break"
+@ app.route('/heart', methods=['POST'])
+@cross_origin()
+def disease_prediction():
+    title = 'Early Heart Disease Prediction'
+    print(request.form)
+    if request.method == 'POST':
+        a = int(request.form['age'])
+        s = int(request.form['sex'])
+        cp = int(request.form['cp'])
+        tr = int(request.form['trestbps'])
+        ch = int(request.form['chol'])
+        f = int(request.form['fbs'])
+        r = int(request.form['restecg'])
+        th = int(request.form['thalach'])
+        e = int(request.form['exang'])
+        o = float(request.form['oldpeak'])
+        sl = int(request.form['slope'])
+        c = int(request.form['ca'])
+        thl = int(request.form['thal'])
+
+        data = np.array([[ a , s , cp , tr , ch , f , r , th , e , o , sl , c , thl]])
+        my_prediction = clf.predict(data)
+        print(my_prediction[0])
+        if my_prediction[0] == 0:
+            return "You won't have any heart disease."
+        else:
+             return "You might have a heart disease."
+        return "Break"
 
 
 if __name__ == '__main__':
