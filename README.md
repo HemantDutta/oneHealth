@@ -94,7 +94,7 @@ Intel oneAPI is a comprehensive suite of software development tools designed to 
 
 ### Use of oneDAL
 
-In our Bengaluru House Price Prediction project, we used the oneDAL library of Intel oneAPI to optimize and accelerate our machine learning models. By using the oneDAL library, we were able to take advantage of Intel's industry-leading optimization and parallelization capabilities to improve the efficiency, accuracy, and performance of our models.
+In our oneHealth, we used the oneDAL library of Intel oneAPI to optimize and accelerate our machine learning models. By using the oneDAL library, we were able to take advantage of Intel's industry-leading optimization and parallelization capabilities to improve the efficiency, accuracy, and performance of our models.
 
 To use oneDAL in our project, we applied the sklearnex patch to our machine learning models. This was done using the code:
 
