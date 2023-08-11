@@ -1,38 +1,45 @@
 <a name="readme-top"></a>
   [![Contributors][contributors-shield]][contributors-url]
   [![Forks][forks-shield]][forks-url]
-  [![Stargazers][stars-shield]][stars-url]
   [![Issues][issues-shield]][issues-url]
 
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
   <a href="https://github.com/HemantDutta/oneHealth">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="https://github.com/HemantDutta/oneHealth/blob/main/client/public/assets/images/oh_heart.png" alt="Logo">
   </a>
 
   <h3 align="center">oneHealth</h3>
 
   <p align="center">
-    Welcome to our project!
+    Predict, Prevent, and Protect with oneHealth!
     <br />
     <a href="https://github.com/HemantDutta/oneHealth"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://drive.google.com/file/d/1FttMlM96K5njpDYt_v4MtVvyPX62REhj/view">View Video</a>
+<!--     <a href="https://drive.google.com/file/d/1FttMlM96K5njpDYt_v4MtVvyPX62REhj/view">View Video</a>
     ·
     <a href="https://raison024-smart-garbage-segregation-deploymentapp-lfq9yb.streamlit.app/">View Demo</a>
+    · -->
+    <a href="https://github.com/HemantDutta/oneHealth/issues">Report Bug</a>
     ·
-    <a href="https://github.com/raison024/Smart-Garbage-Segregation/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/raison024/Smart-Garbage-Segregation/issues">Request Feature</a>
+    <a href="https://github.com/HemantDutta/oneHealth/issues">Request Feature</a>
   </p>
 </div>
 
+## Project Overview
+oneHealth integrates machine learning and medical science to offer potential early detection solutions for brain tumors, heart diseases, and diabetes. The application leverages advanced data processing techniques to predict the presence of conditions. For heart and diabetes predictions, the app evaluates multiple health parameters for predictions.
+
+## User Experience
+The interface is clean, user-friendly, and designed keeping in mind the urgency and gravity of potential diagnoses. Users simply upload their medical images or input health parameters and receive predictions in real-time.
+
+## Value Proposition
+Early detection can be a game-changer in the prognosis of many health conditions. With oneHealth, users can have a preliminary screening tool at their fingertips, promoting proactive healthcare and timely medical interventions.
 
 
 <!-- TABLE OF CONTENTS -->
-<details>
+<!--- <details>
   <summary>Table of Contents</summary>
   <ol>
     <li>
@@ -53,176 +60,87 @@
     <li><a href="#how-we-built-it">How we built it</a></li>
     <li><a href="#what-we-learned">What we learned</a></li>
   </ol>
-</details>
+</details> --->
 
 
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-<div align="center">
-  <img src="images/SmartGarbage.gif" type="gif" alt="png" width="750">
-</div>
-Image classification for recycling refers to the use of machine
-learning algorithms to automatically classify images of waste
-materials, such as plastic, paper, and metal, into their respective
-categories. This process involves training a model using a large
-dataset of labeled images and then using this model to predict the
-category of new, unlabeled images. The goal of image classification
-for recycling is to improve the efficiency and accuracy of recycling
-processes by automating the sorting of materials, reducing human
-error, and increasing the amount of recyclable materials that can be
-recovered.
+**oneHealth** is a cutting-edge web application aimed at early disease detection, including brain tumors, heart conditions, and diabetes. By leveraging the power of machine learning and image processing, it enables users to gain insights into their health conditions based on their brain scans and other health parameters, potentially saving lives through early intervention.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+### Inspiration
+Early detection of life-threatening conditions like brain tumors, heart diseases, and diabetes can significantly improve the prognosis. **oneHealth** aims to bridge the gap between the advancements in AI/ML and the practical application of these technologies in healthcare. The ability to predict a health condition, simply by processing brain scans and health data, can democratize healthcare, making preliminary screening accessible to many.
 
+### Social Impact
+* **Empowerment through Information:** Users can make informed decisions regarding their health, armed with predictions from **oneHealth**.
+* **Early Intervention:** Early detection leads to timely treatments, potentially preventing severe disease progression.
+* **Support for Healthcare Professionals:** Doctors and clinicians can utilize **oneHealth** for preliminary screenings, streamlining patient care.
 
-### Inspiration <img src="images/inspo.png" alt="png" width="30">
-As of 2021, the world generated over 2.01 billion tons of municipal solid waste annually. At least 33% of that waste was not managed in an environmentally safe manner. It is estimated that up to 8 million metric tons of plastic reach the planet’s oceans each year. That equates to five grocery bags filled with plastic for every foot of shoreline on earth. Garbage segregation is a critical issue in modern times due to the rising amount of waste generated by society. Traditional methods of garbage segregation involve manual sorting, which is time-consuming, labor-intensive, and often inefficient. AI/ML can provide a solution to this problem by automating the process of garbage segregation. In this project, we propose a system that utilizes AI/ML algorithms to identify and segregate different types of garbage. The system uses image recognition techniques to analyze the images captured by a camera, and then applies machine learning algorithms to classify the garbage into different categories. The system can also learn from its mistakes and improve its accuracy over time. By automating the process of garbage segregation, we can reduce the workload on human workers, increase efficiency, and reduce environmental pollution.
+### Built With 
 
-### Social Impact <img src="images/impact.png" alt="png" width="30">
-Image classification for recycling has the potential to create
-significant social impact in a number of ways:
-
-1. Environmental sustainability: By automating the sorting of
-recyclable materials, image classification can help increase the
-recovery of valuable materials and reduce waste. This can help
-promote environmental sustainability by conserving resources
-and reducing greenhouse gas emissions associated with the
-production of new materials.
-2. Job creation: The implementation of image classification
-technology in recycling facilities can create new job
-opportunities for individuals with skills in technology and data
-analysis. These jobs can help promote economic growth and
-provide new career pathways for individuals in the recycling
-industry.
-3. Education and awareness: Image classification for recycling can
-also be used as a tool for education and raising awareness about
-the importance of recycling. By creating more efficient and
-accurate recycling processes, individuals and communities may
-become more engaged in sustainable practices and waste
-reduction efforts.
-4. Equity and access: Image classification can also help promote
-equity and access to recycling services, particularly in
-communities that may have limited resources or access to
-recycling facilities. By making recycling processes more
-efficient, these communities may have greater access to
-recycling services and a reduced burden of waste disposal.
-Overall, image classification for recycling has the potential to create
-significant social impact by promoting environmental sustainability,
-job creation, education and awareness, and equity and access.
-
-### Built With <img src="images/built.png" alt="png" width="30">
-
-This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
 
 * [![oneapi][oneapi]][oneapi-url]
-  * [![onednn][onednn]][onednn-url]
+*  [![Scikit-learn ][Scikit-learn]][Scikit-learn]
+* [![onedal][onedal]][onedal-url]
+* [![Flask][Flask]][Flask-url]
 * [![python][python]][python-url]
 * [![jupyter][jupyter]][jupyter-url]
-* [![tensorflow][tensorflow]][tensorflow-url]
-* [![streamlit][streamlit]][streamlit-url]
+
+## Intel oneAPI <img src="https://github.com/joelbkoshy/Assets/blob/main/oneapi2.png" alt="png" width="30">
+
+Intel oneAPI is a comprehensive suite of software development tools designed to simplify the development of high-performance applications across a variety of architectures, including CPUs, GPUs, FPGAs, and other accelerators. One of the main benefits of oneAPI is that it enables developers to take advantage of the full power of modern hardware, including the latest CPUs and GPUs, without having to write separate code for each platform. This can help save time and reduce development costs, as well as improve the overall performance of the application. Some common uses of oneAPI include developing machine learning models, accelerating data analytics workloads, and optimizing scientific simulations.
+
+
+
+### Use of oneDAL
+
+In our Bengaluru House Price Prediction project, we used the oneDAL library of Intel oneAPI to optimize and accelerate our machine learning models. By using the oneDAL library, we were able to take advantage of Intel's industry-leading optimization and parallelization capabilities to improve the efficiency, accuracy, and performance of our models.
+
+To use oneDAL in our project, we applied the sklearnex patch to our machine learning models. This was done using the code:
+
+```
+from sklearnex import patch_sklearn
+patch_sklearn()
+```
+
+This allowed us to seamlessly integrate oneDAL into our existing codebase and take advantage of its powerful capabilities without having to rewrite our entire code. With oneDAL, we were able to accelerate the training of our models and improve their accuracy, allowing us to make more accurate predictions about the prices of houses in Bengaluru based on various features such as square feet, bedrooms, bathrooms, and location.
+
+Overall, the use of oneDAL in our project was crucial to achieving the level of accuracy, efficiency, and optimization necessary for accurate house price predictions. By leveraging the power of Intel's oneAPI platform, we were able to take our machine learning models to the next level and produce results that exceeded our expectations.
+
+## What it does
+**oneHealth** aids in the preliminary prediction of significant health conditions:
+* **Brain Tumor Detection:** Users can upload their brain scan images, which the model processes to predict the likelihood of a tumor.
+* **Heart and Diabetes Detection:** By inputting specific health metrics, users receive predictions about potential heart-related issues or diabetes.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- Intel one api -->
-## Intel oneAPI <img src="images/oneapi2.png" alt="png" width="30">
-Intel OneAPI is a comprehensive development platform for building high-performance, cross-architecture applications. It provides a unified programming model, tools, and libraries that allow developers to optimize their applications for Intel CPUs, GPUs, FPGAs, and other hardware. Intel OneAPI includes support for popular programming languages like C++, Python, and Fortran, as well as frameworks for deep learning, high-performance computing, and data analytics. With Intel OneAPI, developers can build applications that can run on a variety of hardware platforms, from edge devices to data centers, and take advantage of the performance benefits of Intel architectures.
-
-### Use of oneDNN and TensorFlow in our project
-<img src="images/onednn.png" alt="png" width="700">
-OneDNN provides highly optimized routines for various deep learning operations, including convolution, pooling, normalization, and activation functions. By using oneDNN, you can expect faster execution times and better performance on modern CPUs, especially those with Intel processors.
-
-In this project <code>os.environ['TF_ENABLE_ONEDNN_OPTS'] = '1'</code> line sets an environment variable called <code>TF_ENABLE_ONEDNN_OPTS to '1'</code>. This enables the use of Intel's OneAPI Deep Neural Network Library (OneDNN) optimizations for TensorFlow on the system where this code is being run. OneDNN is a high-performance library for deep learning that is designed to optimize the performance of deep neural network computations on a variety of hardware platforms. By enabling OneDNN optimizations, this code may run faster on certain hardware architectures that are compatible with OneDNN. <strong>In this project, the Conv2D and Dense layers will be automatically optimized using oneDNN, which should result in faster training and inference times on compatible hardware.</strong>
-
-The <code>tensorflow.keras</code> module is used to create a convolutional neural network (CNN) model for image classification. The model architecture consists of three convolutional blocks, each followed by a max pooling layer, and three fully connected layers with dropout for regularization.
-
-Finally, the <code>model.compile</code> method is called to configure the optimizer, loss function, and evaluation metric for the model. The optimizer used is Adam, and the loss function used is sparse categorical cross-entropy. The model is also evaluated using the accuracy metric.
-
-<!-- What it does -->
-## What it does <img src="images/does.png" alt="png" width="30">
-The garbage segregation project using AI/ML automates the process of identifying and sorting different types of waste. The system uses image recognition techniques to analyze images captured by a camera and machine learning algorithms to classify the waste into different categories. By accurately identifying and segregating waste, the system can reduce the workload on human workers, increase efficiency, and reduce environmental pollution. The project also promotes responsible waste disposal practices by making people more aware of the types of waste they generate and the proper ways to dispose of them.
+## How we built it
+* Initialization of Libraries and Frameworks
+* Importing and Preprocessing Datasets
+* Building and Validating ML Models
+* Integrating Image Processing Techniques
+* Training Models using TensorFlow and oneDNN
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## How we built it <img src="images/built.png" alt="png" width="30">
-These are the steps involved in making this project: 
-* Importing Libraries
-* Data Importing
-* Data Exploration
-* Data Configuration
-* Preparing the Data
-  * Creating a Generator for Training Set
-  * Creating a Generator for Testing Set
-* Writing the labels into a text file 'Labels.txt'
-* Model Creation
-* Model Compilation
-* Training the Model (batch_size = 32, epochs = 10)
-* Testing Predictions
-* Saving model as 'modelnew.h5'
-* Deploying the Model as a Web Application using Streamlit
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-## What we learned <img src="images/learn.png" alt="png" width="30">
-✅Building a Garbage Classification for Recycling project using OneDNN provided the opportunity to leverage highly optimized building blocks for implementing deep neural networks. OneDNN's library includes optimized algorithms for common neural network layers, such as convolution, pooling, and normalization, enabling fast and efficient execution of the model. In addition, OneDNN offers support for a variety of programming languages, including C++, Python, and Java. Leveraging OneDNN's optimization capabilities, it was possible to accelerate the training and inference of the deep learning models for garbage classification, and improve the overall throughput and scalability of the system.
-
-✅ Waste management: I gained knowledge of waste management. It is the
-process of collecting, treating, disposing, and recycling waste materials. It is
-essential for maintaining a clean and healthy environment as well as preventing
-the negative impacts of waste on human health and the environment.
-
-✅Image Processing: Building a Garbage Classification for Recycling using
-machine learning techniques involves processing large amounts of image data.
-During the project, I have learned how to preprocess the images and extract
-relevant features to improve the accuracy of your classification models.
-
-✅Machine Learning: While building your Garbage Classification for Recycling
-system, I gained a deeper understanding of the different types of machine
-learning algorithms, including supervised, unsupervised, and reinforcement
-learning. I have also learned how to use deep learning models such as
-convolutional neural networks (CNNs) for image classification.
-
-✅Model Evaluation: Evaluating the performance of your machine learning
-models is a critical step in building an effective Garbage Classification for
-Recycling system. I have learned how to use metrics such as accuracy,
-precision, and recall to assess the performance of your models and identify
-areas for improvement.
-
-✅Data Analysis: In addition to collecting and analyzing data, I gained
-experience in data cleaning, data wrangling, and data visualization. These skills
-are essential for preparing data for machine learning models and communicating
-insights to stakeholders.
-
-✅Environmental Sustainability: By working on a project that promotes waste
-reduction and recycling, you likely gained a deeper understanding of the importance of environmental sustainability. This knowledge has motivated me
-to explore other ways to reduce waste and promote sustainable practices in your
-community.
-
-✅Collaboration: Building a project like this likely required collaboration with a
-team of experts in various fields, such as waste management, machine learning,
-and data analysis, and I learned the importance of working together to achieve
-common goals.
-
-Overall, the skills and knowledge I have gained while building Garbage
-Classification for Recycling system are highly valuable and applicable to a wide
-range of fields beyond waste management and recycling. Building Garbage
-Classification for Recycling was a challenging and rewarding experience . 
+## What we learned
+* **Deep Learning in Healthcare:** Realized the vast potential of deep learning in revolutionizing healthcare diagnostics.
+* **oneDNN's Potential:** Leveraged oneDNN's power in accelerating deep learning computations, improving prediction accuracy and efficiency.
+* **Medical Imaging:** Understood the complexities and intricacies of processing and analyzing medical images for diagnostic purposes.
+* **Interdisciplinary Collaboration:** Learned the importance of merging technology and medical science to build impactful applications.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/raison024/Smart-Garbage-Segregation.svg?style=for-the-badge
+[contributors-shield]: https://img.shields.io/badge/Contributers-4-green?style=for-the-badge
 [contributors-url]: https://github.com/raison024/Smart-Garbage-Segregation/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/raison024/Smart-Garbage-Segregation.svg?style=for-the-badge
+[forks-shield]: https://img.shields.io/badge/Forks-2-blue?style=for-the-badge
 [forks-url]: https://github.com/raison024/Smart-Garbage-Segregation/network/members
-[stars-shield]: https://img.shields.io/github/stars/raison024/Smart-Garbage-Segregation.svg?style=for-the-badge
-[stars-url]: https://github.com/raison024/Smart-Garbage-Segregation/stargazers
-[issues-shield]: https://img.shields.io/github/issues/raison024/Smart-Garbage-Segregation.svg?style=for-the-badge
+[issues-shield]: https://img.shields.io/badge/Issues-0_OPEN-purple?style=for-the-badge
 [issues-url]: https://github.com/raison024/Smart-Garbage-Segregation/issues
 
-[product-screenshot]: images/screenshot.png
 
 
 
@@ -230,12 +148,12 @@ Classification for Recycling was a challenging and rewarding experience .
 [python-url]: https://www.python.org/
 [jupyter]: https://img.shields.io/badge/Jupyter%20Notebook-da5b0b?&logoColor=white
 [jupyter-url]: https://jupyter.org/
-[tensorflow]: https://img.shields.io/badge/TensorFlow-f0b93a?&logoColor=white
-[tensorflow-url]: https://www.tensorflow.org/
-[streamlit]: https://img.shields.io/badge/Streamlit-f24747?&logoColor=white
-[streamlit-url]: https://streamlit.io/
+[Scikit-learn]: https://img.shields.io/badge/Scikit-learn-20232A?&logoColor=61DAFB
+[Scikit-learn-url]: https://www.intel.com/content/www/us/en/docs/oneapi/programming-guide/2023-0/intel-oneapi-data-analytics-library-onedal.html
+[Flask]: https://img.shields.io/badge/Flask-90E0EF?&logoColor=white
+[Flask-url]: https://www.intel.com/content/www/us/en/docs/oneapi/programming-guide/2023-0/intel-oneapi-data-analytics-library-onedal.html
 [oneapi]: https://img.shields.io/badge/Intel%20oneAPI-20232A?&logoColor=61DAFB
 [oneapi-url]: https://www.intel.com/content/www/us/en/docs/oneapi/programming-guide/2023-0/intel-oneapi-data-analytics-library-onedal.html
-[onednn]: https://img.shields.io/badge/oneDNN-20232A?&logoColor=61DAFB
-[onednn-url]: https://www.intel.com/content/www/us/en/developer/tools/oneapi/onednn.html
+[onedal]: https://img.shields.io/badge/oneDAL-20232A?&logoColor=61DAFB
+[onedal-url]: https://www.intel.com/content/www/us/en/developer/tools/oneapi/onedal.html
 
