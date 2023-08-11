@@ -16,7 +16,7 @@
   <p align="center">
     Welcome to our project!
     <br />
-    <a href="https://github.com/raison024/Smart-Garbage-Segregation"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/HemantDutta/oneHealth"><strong>Explore the docs »</strong></a>
     <br />
     <br />
     <a href="https://drive.google.com/file/d/1FttMlM96K5njpDYt_v4MtVvyPX62REhj/view">View Video</a>
