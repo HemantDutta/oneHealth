@@ -9,6 +9,7 @@ from flask import Flask, request, render_template
 from werkzeug.utils import secure_filename
 from flask_cors import CORS, cross_origin
 import joblib
+import pickle
 
 
 app = Flask(__name__)
@@ -19,6 +20,10 @@ app.config['CORS_HEADERS'] = 'Content-Type'
 # model = joblib.load('model.pkl')
 model = load_model('BrainTumor10Epochs.h5')
 print('Model loaded. Check http://127.0.0.1:5000/')
+
+# Get Heart Disease Model
+filename = 'RandomForest.pkl'
+clf = pickle.load(open(filename, "rb"))
 
 
 def get_className(classNo):
@@ -58,6 +63,35 @@ def upload():
         result=get_className(value) 
         return result
     return None
+
+# @ app.route('/disease-predict', methods=['POST'])
+# @cross_origin()
+# def disease_prediction():
+#     title = 'Early Heart Disease Prediction'
+#
+#     if request.method == 'POST':
+#         a = int(request.form['age'])
+#         s = int(request.form['sex'])
+#         cp = int(request.form['cp'])
+#         tr = int(request.form['trestbps'])
+#         ch = int(request.form['chol'])
+#         f = int(request.form['fbs'])
+#         r = int(request.form['restecg'])
+#         th = int(request.form['thalach'])
+#         e = int(request.form['exang'])
+#         o = float(request.form['oldpeak'])
+#         sl = int(request.form['slope'])
+#         c = int(request.form['ca'])
+#         thl = int(request.form['thal'])
+#
+#         data = np.array([[ a , s , cp , tr , ch , f , r , th , e , o , sl , c , thl]])
+#         my_prediction = clf.predict(data)
+#         print(my_prediction[0])
+#         if my_prediction[0] == 0:
+#             return "You won't have any heart disease."
+#         else:
+#              return "You might have a heart disease."
+#         return "Break"
 
 
 if __name__ == '__main__':

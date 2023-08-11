@@ -89,7 +89,7 @@ export const Diagnose = () => {
                         <span className="model-chip" id="heartChip" onClick={() => {
                             modelSwitcher("heart")
                         }}>Heart Disease</span>
-                        <span className="model-chip">Diabetes</span>
+                        <span className="model-chip" id="diabetes">Diabetes</span>
                     </div>
                     <div className="tumor-model-content activeModel" id="brain">
                         <div className="model-header">
@@ -132,7 +132,7 @@ export const Diagnose = () => {
                                 </div>
                                 <div className="input-field">
                                     <select name="gender" id="gender">
-                                        <option value="#">Gender</option>
+                                        <option value="">Gender</option>
                                         <option value="1">Male</option>
                                         <option value="0">Female</option>
                                     </select>
@@ -160,7 +160,7 @@ export const Diagnose = () => {
                                 </div>
                                 <div className="input-field">
                                     <select name="fbs" id="fbs">
-                                        <option value="#">Is the Fasting Blood Sugar > 120?</option>
+                                        <option value="">Is the Fasting Blood Sugar > 120?</option>
                                         <option value="0">Yes</option>
                                         <option value="1">No</option>
                                     </select>
@@ -173,7 +173,7 @@ export const Diagnose = () => {
                                 </div>
                                 <div className="input-field">
                                     <select name="exang" id="exang">
-                                        <option value="#">Exercise Induced Angina</option>
+                                        <option value="">Exercise Induced Angina</option>
                                         <option value="0">No</option>
                                         <option value="1">Yes</option>
                                     </select>
@@ -182,7 +182,7 @@ export const Diagnose = () => {
                             <div className="input-row">
                                 <div className="input-field">
                                     <select name="ca" id="ca">
-                                        <option value="#">Number of major vessels</option>
+                                        <option value="">Number of major vessels</option>
                                         <option value="0">0</option>
                                         <option value="1">1</option>
                                         <option value="2">2</option>
@@ -191,7 +191,7 @@ export const Diagnose = () => {
                                 </div>
                                 <div className="input-field">
                                     <select name="thal" id="thal">
-                                        <option value="#">Thal Value</option>
+                                        <option value="">Thal Value</option>
                                         <option value="3">Normal</option>
                                         <option value="6">Fix Defect</option>
                                         <option value="7">Reversible Defect</option>
@@ -207,7 +207,7 @@ export const Diagnose = () => {
                             <div className="input-row">
                                 <div className="input-field">
                                     <select name="slope" id="slope" className="full-select">
-                                        <option value="#">The slope of the peak exercise ST segment</option>
+                                        <option value="">The slope of the peak exercise ST segment</option>
                                         <option value="1">Upsloping</option>
                                         <option value="2">Flat</option>
                                         <option value="3">Downsloping</option>
@@ -217,7 +217,7 @@ export const Diagnose = () => {
                             <div className="input-row">
                                 <div className="input-field">
                                     <select name="restecg" id="restecg" className="full-select">
-                                        <option value="#">Resting Electrocardiographic Results</option>
+                                        <option value="">Resting Electrocardiographic Results</option>
                                         <option value="0">Normal</option>
                                         <option value="1">Having ST-T wave Abnormality</option>
                                         <option value="2">showing probable or definite left ventricular hypertrophy by Estes' criteria</option>
