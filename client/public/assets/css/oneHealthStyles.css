@@ -11,7 +11,7 @@
     --accent-color: #9ee3ff;
     --accent-color2: #9fcaff;
     --accent-color3: #9cfdff;
-    --accent-color4: #ffeabb;
+    --accent-color4: #efdcb0;
     --text-font-size: calc(15px + 0.34vw);
     --bg-color: #FFEEBB
 }
@@ -31,7 +31,7 @@
 /*Scrollbar*/
 
 ::-webkit-scrollbar {
-    width: 10px;
+    width: 7px;
 }
 
 ::-webkit-scrollbar-track {
@@ -39,7 +39,8 @@
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #888;
+    background: #577a8a;
+    border-radius: 50px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -86,7 +87,7 @@ body {
     background-color: #3ba9d3;
 }
 
-.head-font{
+.head-font {
     font-family: 'Preahvihear', sans-serif;
 }
 
@@ -373,10 +374,11 @@ nav .navbar-inner-container .navbar-hamburger-option .hamburger.clicked span:nth
     align-items: center;
     justify-content: space-evenly;
     padding-left: 3rem;
+    gap: 2rem;
 }
 
-
 .home-container .hero .hero-content .hero-left {
+    flex-basis: 55%;
     display: flex;
     flex-direction: column;
     row-gap: 1rem;
@@ -407,69 +409,120 @@ nav .navbar-inner-container .navbar-hamburger-option .hamburger.clicked span:nth
     color: black;
 }
 
+.home-container .hero .hero-content .hero-right {
+    flex-basis: 45%;
+    padding-right: 3rem;
+}
+
+.home-container .hero .hero-content .hero-right .hero-right-img {
+    position: relative;
+    text-align: center;
+}
+
+.home-container .hero .hero-content .hero-right .hero-right-img img {
+    position: relative;
+    height: 520px;
+    width: 410px;
+    object-fit: contain;
+    border-radius: 40px;
+    z-index: 110;
+}
+
+.home-container .hero .hero-content .hero-right .hero-right-img .hovering-msg:nth-child(2) {
+    position: absolute;
+    background-color: #fff;
+    top: 30%;
+    left: 10%;
+    font-size: 20px;
+    width: 200px;
+    padding: 1rem;
+    border-radius: 20px;
+    border-top: 10px solid var(--accent-color4);
+    z-index: 111;
+}
+
+.home-container .hero .hero-content .hero-right .hero-right-img .hovering-msg:nth-child(3) {
+    position: absolute;
+    background-color: #fff;
+    bottom: 30%;
+    right: 55px;
+    font-size: 20px;
+    width: 200px;
+    padding: 1rem;
+    border-radius: 20px;
+    border-top: 10px solid var(--accent-color3);
+    z-index: 111;
+}
+
+@media screen and (max-width: 1091px) {
+    .home-container .hero .hero-content .hero-left .hero-left-head {
+        font-size: 36px;
+    }
+}
+
 /*==========Home -> Hero End==========*/
 
 /*==========Navbar -> Join Now==========*/
 
-.joinNow{
+.joinNow {
     position: fixed;
     inset: 0;
     margin: auto;
     height: 100vh;
     width: 100%;
     z-index: 1005;
-    background-color: rgba(21,21,21,0.8);
+    background-color: rgba(21, 21, 21, 0.8);
     display: none;
     place-items: center;
     opacity: 0;
     transition: opacity 0.4s ease;
 }
 
-.joinNow.opened{
+.joinNow.opened {
     opacity: 1;
 }
 
-.joinNow .joinNow-content{
+.joinNow .joinNow-content {
     background-color: #fff;
     padding: 1rem 2rem;
     box-shadow: -10px 10px black;
     transition: all 0.4s ease;
 }
 
-.joinNow .joinNow-content #loginForm{
+.joinNow .joinNow-content #loginForm {
     display: none;
     opacity: 0;
     transition: all 0.4s ease;
 }
 
-.joinNow .joinNow-content #regForm{
+.joinNow .joinNow-content #regForm {
     opacity: 0;
     transition: all 0.4s ease;
 }
 
-.joinNow .joinNow-content #loginForm.active, .joinNow .joinNow-content #regForm.active{
+.joinNow .joinNow-content #loginForm.active, .joinNow .joinNow-content #regForm.active {
     opacity: 1;
 }
 
-.joinNow .joinNow-content .login-form-header{
+.joinNow .joinNow-content .login-form-header {
     padding: 10px;
     text-align: center;
     font-size: 56px;
     font-weight: bold;
 }
 
-.joinNow .joinNow-content .login-form-tag{
+.joinNow .joinNow-content .login-form-tag {
     font-size: 20px;
     color: grey;
     margin-bottom: 25px;
 }
 
-.joinNow .joinNow-content form .input-field{
+.joinNow .joinNow-content form .input-field {
     position: relative;
     margin: 30px 0;
 }
 
-.joinNow .joinNow-content form .input-field input{
+.joinNow .joinNow-content form .input-field input {
     background-color: #e8f1f1;
     border: none;
     padding: 1rem;
@@ -477,7 +530,7 @@ nav .navbar-inner-container .navbar-hamburger-option .hamburger.clicked span:nth
     font-size: 20px;
 }
 
-.joinNow .joinNow-content form .input-field label{
+.joinNow .joinNow-content form .input-field label {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -486,29 +539,170 @@ nav .navbar-inner-container .navbar-hamburger-option .hamburger.clicked span:nth
     padding: 0 10px;
 }
 
-.joinNow .joinNow-content form .input-field:focus-within label{
+.joinNow .joinNow-content form .input-field:focus-within label {
     transform: translateY(-175%);
     background-color: #fff;
     border-radius: 0 0 20px 20px;
 }
 
-.joinNow .joinNow-content form .btn-field{
+.joinNow .joinNow-content form .btn-field {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-.joinNow .joinNow-content form .btn-field span{
+.joinNow .joinNow-content form .btn-field span {
     text-decoration: underline;
     cursor: pointer;
 }
 
-.joinNow .joinNow-content form .btn-field span:hover{
+.joinNow .joinNow-content form .btn-field span:hover {
     color: var(--accent-color2);
 }
+
 /*==========Navbar -> Join Now End==========*/
 
+/*==========Diagnose==========*/
+
+.diagnose {
+    background: linear-gradient(-45deg, #9AC5F4, #99DBF5, #A7ECEE, #FFEEBB);
+    background-size: 200% 200%;
+    -webkit-animation: heroGradient 10s ease infinite;
+    -moz-animation: heroGradient 10s ease infinite;
+    animation: heroGradient 10s ease infinite;
+}
+
+.diagnose .diagnose-gradient-bar {
+    height: 200px;
+    width: 100%;
+}
+
+.diagnose .diagnose-content {
+    background-color: #fff;
+    border-radius: 80px 80px 0 0;
+    padding: 2rem;
+}
+
+.diagnose .diagnose-content .diagnose-model-bar {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    cursor: pointer;
+}
+
+.diagnose .diagnose-content .diagnose-model-bar .model-chip {
+    padding: 10px 24px;
+    background-color: #fff;
+    box-shadow: -5px 5px black;
+    border: 1px solid black;
+    transition: all 0.2s ease;
+    font-size: 20px;
+}
+
+.diagnose .diagnose-content .diagnose-model-bar .model-chip:hover {
+    background-color: #e1e1e1;
+    box-shadow: -8px 8px black;
+    transform: scale(105%);
+}
+
+.diagnose .diagnose-content .diagnose-model-bar .model-chip.active {
+    background-color: var(--accent-color3);
+}
+
+.diagnose .diagnose-content .tumor-model-content, .diagnose .diagnose-content .heart-model-content {
+    margin-top: 5rem;
+    width: max-content;
+    margin-left: auto;
+    margin-right: auto;
+    transition: all 0.4s ease;
+    opacity: 0;
+    display: none;
+}
 
 
+.diagnose .diagnose-content .model-header span {
+    font-size: 56px;
+}
 
+.diagnose .diagnose-content .model-des span {
+    font-size: 20px;
+    color: grey;
+}
 
+.diagnose .diagnose-content .model-form{
+    margin: 2rem 0 0 0;
+}
+
+.diagnose .diagnose-content .tumor-model-content .model-form input{
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid black;
+    font-size: 20px;
+    box-shadow: -5px 5px black;
+}
+
+.diagnose .diagnose-content .model-result{
+    margin-top: 3rem;
+}
+
+.diagnose .diagnose-content .model-result span{
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.diagnose .diagnose-content .activeModel{
+    opacity: 1;
+    display: block;
+}
+
+.diagnose .diagnose-content .heart-model-content .model-form{
+    width: 650px;
+}
+
+.diagnose .diagnose-content .heart-model-content .model-form .input-row{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.diagnose .diagnose-content .heart-model-content .model-form .input-row .input-field{
+    position: relative;
+    margin: 20px 0;
+}
+
+.diagnose .diagnose-content .heart-model-content .model-form .input-row .input-field input{
+    background-color: #e8f1f1;
+    border: none;
+    padding: 1rem;
+    width: 100%;
+    font-size: 20px;
+}
+
+.diagnose .diagnose-content .heart-model-content .model-form .input-row .input-field select{
+    padding: 10px;
+    height: 55px;
+    width: 275px;
+    font-size: 16px;
+    background-color: #e8f1f1;
+    border: none;
+}
+
+.diagnose .diagnose-content .heart-model-content .model-form .input-row .input-field .full-select{
+    width: 585px;
+}
+
+.diagnose .diagnose-content .heart-model-content .model-form .input-row .input-field label{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px;
+    transition: all 0.2s ease;
+    padding: 0 10px;
+}
+
+.diagnose .diagnose-content .heart-model-content .model-form .input-row .input-field:focus-within label{
+    transform: translateY(-175%);
+    background-color: #fff;
+    border-radius: 0 0 20px 20px;
+}
+/*==========Diagnose End==========*/
