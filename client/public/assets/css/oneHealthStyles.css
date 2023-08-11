@@ -534,6 +534,7 @@ nav .navbar-inner-container .navbar-hamburger-option .hamburger.clicked span:nth
 .joinNow .joinNow-content form .input-field label {
     position: absolute;
     top: 50%;
+    left: 0;
     transform: translateY(-50%);
     font-size: 18px;
     transition: all 0.2s ease;
@@ -541,6 +542,12 @@ nav .navbar-inner-container .navbar-hamburger-option .hamburger.clicked span:nth
 }
 
 .joinNow .joinNow-content form .input-field:focus-within label {
+    transform: translateY(-175%);
+    background-color: #fff;
+    border-radius: 0 0 20px 20px;
+}
+
+.joinNow .joinNow-content form .input-field input:valid + label{
     transform: translateY(-175%);
     background-color: #fff;
     border-radius: 0 0 20px 20px;

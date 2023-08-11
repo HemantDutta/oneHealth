@@ -1,10 +1,16 @@
 import {Link} from "react-router-dom";
 import {useEffect, useRef, useState} from "react";
+import supabase from "../config/supabaseClient";
 
 export const Navbar = ({joinNowTrigger}) => {
 
     //States
     const [serviced, setServiced] = useState(0);
+
+    //Register States
+    const [username, setUsername] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
 
     //Refs
     const firstRender = useRef(true);
@@ -122,6 +128,20 @@ export const Navbar = ({joinNowTrigger}) => {
 
     }, [])
 
+    //Register User
+    async function registerUser(){
+        const {status, errors} = await supabase
+            .from("users")
+            .insert({name: username, email: email, password: password})
+
+        if(status === 201){
+            console.log("Registration Successful");
+        }
+        if(errors){
+            console.log(errors);
+        }
+    }
+
     return (
         <>
             <nav>
@@ -209,21 +229,21 @@ export const Navbar = ({joinNowTrigger}) => {
                             <span>Join the oneHealth family</span>
                         </div>
                         <div className="login-form">
-                            <form>
+                            <form onSubmit={registerUser}>
                                 <div className="input-field">
+                                    <input type="text" id="name" onChange={(e)=>{setUsername(e.target.value)}} required/>
                                     <label htmlFor="name"><i className="fa-regular fa-envelope"/> Enter your name</label>
-                                    <input type="text" id="name"/>
                                 </div>
                                 <div className="input-field">
+                                    <input type="text" id="regEmail" onChange={(e)=>{setEmail(e.target.value)}} required/>
                                     <label htmlFor="regEmail"><i className="fa-regular fa-envelope"/> Email Address</label>
-                                    <input type="email" id="regEmail"/>
                                 </div>
                                 <div className="input-field">
+                                    <input type="password" id="regPass" onChange={(e)=>{setPassword(e.target.value)}} required/>
                                     <label htmlFor="regPass"><i className="fa-solid fa-key"/> Password</label>
-                                    <input type="password" id="regPass"/>
                                 </div>
                                 <div className="btn-field">
-                                    <button className="hover-btn">Register</button>
+                                    <button className="hover-btn" type="submit">Register</button>
                                     <span onClick={toggleLS}>Already a member?</span>
                                 </div>
                             </form>
