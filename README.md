@@ -129,6 +129,19 @@ The development of oneHealth, aimed at revolutionizing healthcare diagnostics fo
 
 Intel oneAPI is a comprehensive suite of software development tools designed to simplify the development of high-performance applications across a variety of architectures, including CPUs, GPUs, FPGAs, and other accelerators. One of the main benefits of oneAPI is that it enables developers to take advantage of the full power of modern hardware, including the latest CPUs and GPUs, without having to write separate code for each platform. This can help save time and reduce development costs, as well as improve the overall performance of the application. Some common uses of oneAPI include developing machine learning models, accelerating data analytics workloads, and optimizing scientific simulations.
 
+## Merits of Using oneAPI
+
+Utilizing the power of oneAPI offers several distinct advantages for the oneHealth project:
+
+1. **Unified Development:** oneAPI provides a unified development environment, allowing us to seamlessly target diverse hardware architectures, including CPUs, GPUs, and FPGAs. This ensures optimal performance across different platforms.
+
+2. **Heterogeneous Computing:** With oneAPI, we harness the capabilities of various accelerators to enhance computational efficiency. This enables us to accelerate complex computations, improving diagnostic speed and accuracy.
+
+3. **Performance Optimization:** The performance analysis tools in oneAPI help us identify bottlenecks and optimize code for maximum efficiency. This results in faster processing times and more responsive diagnostics.
+
+4. **Scalability:** As the oneHealth platform evolves, oneAPI's scalability ensures our application can handle increasing amounts of medical data and diagnostic requirements, providing a future-proof solution.
+
+5. **Ecosystem Integration:** By leveraging oneAPI alongside other Intel technologies, such as oneDAL and TensorFlow, we create a synergistic ecosystem that enhances data analysis, machine learning, and neural network tasks, further improving the accuracy and scope of diagnostics.
 
 
 ### Use of oneDAL
