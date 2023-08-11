@@ -89,7 +89,7 @@ export const Diagnose = () => {
                         <span className="model-chip" id="heartChip" onClick={() => {
                             modelSwitcher("heart")
                         }}>Heart Disease</span>
-                        <span className="model-chip">Blank</span>
+                        <span className="model-chip">Diabetes</span>
                     </div>
                     <div className="tumor-model-content activeModel" id="brain">
                         <div className="model-header">
@@ -223,6 +223,9 @@ export const Diagnose = () => {
                                         <option value="2">showing probable or definite left ventricular hypertrophy by Estes' criteria</option>
                                     </select>
                                 </div>
+                            </div>
+                            <div className="btn-field">
+                                <button className="hover-btn">Submit</button>
                             </div>
                         </div>
                         <div className="model-result">

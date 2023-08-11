@@ -705,4 +705,15 @@ nav .navbar-inner-container .navbar-hamburger-option .hamburger.clicked span:nth
     background-color: #fff;
     border-radius: 0 0 20px 20px;
 }
+
+.diagnose .diagnose-content .heart-model-content .model-form .btn-field{
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.diagnose .diagnose-content .heart-model-content .model-form .btn-field button{
+    background-color: #fff;
+    border: 1px solid black;
+    color: black;
+}
 /*==========Diagnose End==========*/
