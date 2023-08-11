@@ -12,7 +12,7 @@ from keras.utils import to_categorical
 import joblib
 
 
-image_directory='datasets/'
+image_directory='DATASET/datasets/'
 dataset=[]
 label=[]
 no_tumor_images=os.listdir(image_directory+'no/')
