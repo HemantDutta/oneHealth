@@ -143,6 +143,50 @@ export const Navbar = ({joinNowTrigger}) => {
         }
     }
 
+    //Check Email Before Registration
+    async function checkMail(e){
+        e.preventDefault();
+        const {data} = await supabase
+            .from("users")
+            .select()
+            .eq("email", email);
+
+        if (data.length !== 0) {
+            toggleAlert("Email Already Exists!");
+        } else {
+            await registerUser();
+        }
+    }
+
+    //Alert Toggle
+    function toggleAlert(msg){
+        let alert = document.getElementById("oneAlert");
+        let message = document.getElementById("alert-message");
+
+        if(alert.classList.contains("active")){
+            message.innerText = msg;
+        }
+        else{
+            alert.style.display = "block";
+            setTimeout(()=>{
+                alert.classList.add("active");
+                message.innerText = msg;
+            },100)
+        }
+    }
+
+    //Close Alert
+    function closeAlert(){
+        let alert = document.getElementById("oneAlert");
+        let message = document.getElementById("alert-message");
+
+        alert.classList.remove("active");
+        setTimeout(()=>{
+            alert.style.display = "none";
+            message.innerText = "";
+        },100);
+    }
+
     return (
         <>
             <nav>
@@ -230,7 +274,7 @@ export const Navbar = ({joinNowTrigger}) => {
                             <span>Join the oneHealth family</span>
                         </div>
                         <div className="login-form">
-                            <form onSubmit={registerUser}>
+                            <form onSubmit={checkMail}>
                                 <div className="input-field">
                                     <input type="text" id="name" onChange={(e)=>{setUsername(e.target.value)}} required/>
                                     <label htmlFor="name"><i className="fa-regular fa-envelope"/> Enter your name</label>
@@ -250,6 +294,12 @@ export const Navbar = ({joinNowTrigger}) => {
                             </form>
                         </div>
                     </div>
+                </div>
+            </div>
+            <div className="one-alert" id="oneAlert">
+                <div className="one-alert-container">
+                    <i className="fa-solid fa-xmark" onClick={closeAlert}/>
+                    <span id="alert-message"></span>
                 </div>
             </div>
         </>

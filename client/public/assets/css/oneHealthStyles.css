@@ -570,6 +570,43 @@ nav .navbar-inner-container .navbar-hamburger-option .hamburger.clicked span:nth
 
 /*==========Navbar -> Join Now End==========*/
 
+/*==========One Alert==========*/
+
+.one-alert{
+    position: fixed;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1111;
+    display: none;
+    transition: all 0.4s cubic-bezier(.17,.67,.83,.67);
+    opacity: 0;
+}
+
+.one-alert .one-alert-container{
+    background-color: #fff;
+    padding: 1rem;
+    box-shadow: -10px 10px black;
+    position: relative;
+    width: 200px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.one-alert.active{
+    opacity: 1;
+}
+
+.one-alert .one-alert-container i{
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+/*==========One Alert End==========*/
+
 /*==========Diagnose==========*/
 
 .diagnose {
