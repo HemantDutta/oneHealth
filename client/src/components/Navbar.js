@@ -13,6 +13,13 @@ export const Navbar = ({joinNowTrigger}) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
+    //Login States
+    const [logMail, setLogMail] = useState('');
+    const [logPass, setLogPass] = useState('');
+
+    //Session States
+    const [sessionName, setSessionName] = useState('');
+
     //Refs
     const firstRender = useRef(true);
 
@@ -80,29 +87,28 @@ export const Navbar = ({joinNowTrigger}) => {
     }
 
     //Toggle Login/SignUp
-    function toggleLS(){
+    function toggleLS() {
         let login = document.getElementById("loginForm");
         let reg = document.getElementById("regForm");
 
-        if(reg.classList.contains("active")){
+        if (reg.classList.contains("active")) {
             reg.classList.remove("active");
-            setTimeout(()=>{
+            setTimeout(() => {
                 reg.style.display = "none";
                 login.style.display = "block";
-                setTimeout(()=>{
+                setTimeout(() => {
                     login.classList.add("active");
-                },100)
-            },400)
-        }
-        else{
+                }, 100)
+            }, 400)
+        } else {
             login.classList.remove("active");
-            setTimeout(()=>{
+            setTimeout(() => {
                 login.style.display = "none";
                 reg.style.display = "block";
-                setTimeout(()=>{
+                setTimeout(() => {
                     reg.classList.add("active");
-                },100)
-            },400)
+                }, 100)
+            }, 400)
         }
     }
 
@@ -130,7 +136,7 @@ export const Navbar = ({joinNowTrigger}) => {
     }, [])
 
     //Register User
-    async function registerUser(){
+    async function registerUser() {
         let login = document.getElementById("loginForm");
         let reg = document.getElementById("regForm");
 
@@ -138,24 +144,24 @@ export const Navbar = ({joinNowTrigger}) => {
             .from("users")
             .insert({name: username, email: email, password: password})
 
-        if(status === 201){
+        if (status === 201) {
             toggleAlert("Registration Successful! Log in to continue");
             reg.classList.remove("active");
-            setTimeout(()=>{
+            setTimeout(() => {
                 reg.style.display = "none";
                 login.style.display = "block";
-                setTimeout(()=>{
+                setTimeout(() => {
                     login.classList.add("active");
-                },100)
-            },400)
+                }, 100)
+            }, 400)
         }
-        if(errors){
+        if (errors) {
             console.log(errors);
         }
     }
 
     //Check Email Before Registration
-    async function checkMail(e){
+    async function checkMail(e) {
         e.preventDefault();
         const {data} = await supabase
             .from("users")
@@ -170,33 +176,83 @@ export const Navbar = ({joinNowTrigger}) => {
     }
 
     //Alert Toggle
-    function toggleAlert(msg){
+    function toggleAlert(msg) {
         let alert = document.getElementById("oneAlert");
         let message = document.getElementById("alert-message");
 
-        if(alert.classList.contains("active")){
+        if (alert.classList.contains("active")) {
             message.innerText = msg;
-        }
-        else{
+        } else {
             alert.style.display = "block";
-            setTimeout(()=>{
+            setTimeout(() => {
                 alert.classList.add("active");
                 message.innerText = msg;
-            },100)
+            }, 100)
         }
     }
 
     //Close Alert
-    function closeAlert(){
+    function closeAlert() {
         let alert = document.getElementById("oneAlert");
         let message = document.getElementById("alert-message");
 
         alert.classList.remove("active");
-        setTimeout(()=>{
+        setTimeout(() => {
             alert.style.display = "none";
             message.innerText = "";
-        },100);
+        }, 100);
     }
+
+    //Check Login Mail
+    async function checkLoginMail(e) {
+        let login = document.getElementById("loginForm");
+        e.preventDefault();
+        const {data} = await supabase
+            .from("users")
+            .select()
+            .eq("email", logMail);
+
+        if (data.length !== 0) {
+            if (data[0].password === logPass) {
+                loginUser();
+                toggleAlert("Welcome Back " + data[0].name);
+                login.classList.remove("active");
+                setTimeout(() => {
+                    login.style.display = "none";
+                    toggleJoinNow();
+                }, 400)
+            } else {
+                toggleAlert("Incorrect Password");
+            }
+        } else {
+            toggleAlert("Incorrect Email");
+        }
+    }
+
+    //Login User
+    function loginUser() {
+        setCookie("em", logMail, 3);
+    }
+
+    //Check Session
+    async function checkSession() {
+        const sesEmail = getCookie("em");
+        if (sesEmail.length !== 0) {
+            const {data} = await supabase
+                .from("users")
+                .select()
+                .eq("email", sesEmail);
+
+            setSessionName(data[0].name);
+        }
+    }
+
+    //Check Session Caller
+    useEffect(() => {
+        if (!sessionName) {
+            checkSession().then();
+        }
+    }, [])
 
     return (
         <>
@@ -206,13 +262,25 @@ export const Navbar = ({joinNowTrigger}) => {
                         <img src="assets/images/oneHealth_horizontal.png" alt="oneHealth Logo"/>
                     </div>
                     <div className="navbar-links">
-                        <Link to={"/"}>Dashboard</Link>
+                        {
+                            sessionName &&
+                            <Link to={"/"}>Dashboard</Link>
+                        }
                         <Link to={"/diagnose"}>Diagnose</Link>
                         <Link to={"/"}>About</Link>
                     </div>
-                    <div className="navbar-join-btn">
-                        <button onClick={toggleJoinNow}>Join Now</button>
-                    </div>
+                    {
+                        !sessionName &&
+                        <div className="navbar-join-btn">
+                            <button onClick={toggleJoinNow}>Join Now</button>
+                        </div>
+                    }
+                    {
+                        sessionName &&
+                        <div className="navbar-join-btn">
+                            <button>Dashboard</button>
+                        </div>
+                    }
                     <div className="navbar-hamburger-option">
                         <div className="hamburger" id="hamburger" onClick={toggleBigMenu}>
                             <span></span><span></span><span></span>
@@ -222,21 +290,28 @@ export const Navbar = ({joinNowTrigger}) => {
             </nav>
             <div className="bigMenu" id="bigMenu">
                 <div className="bigMenu-container head-font">
-                    <Link className="bigMenu-item">
-                        <div className="item-text">Dashboard</div>
-                        <div className="item-icon">
-                            <i className="fa-solid fa-arrow-right"/>
-                        </div>
-                    </Link>
-                    <span className="bigMenu-item" onClick={() => {
-                        toggleBigMenu();
-                        toggleJoinNow();
-                    }}>
+                    {
+                        sessionName &&
+                        <Link className="bigMenu-item">
+                            <div className="item-text">Dashboard</div>
+                            <div className="item-icon">
+                                <i className="fa-solid fa-arrow-right"/>
+                            </div>
+                        </Link>
+                    }
+                    {
+                        !sessionName &&
+                        <span className="bigMenu-item" onClick={() => {
+                            toggleBigMenu();
+                            toggleJoinNow();
+                        }}>
                         <div className="item-text">Join Now</div>
                         <div className="item-icon">
                             <i className="fa-solid fa-arrow-right"/>
                         </div>
-                    </span>
+                        </span>
+                    }
+
                     <Link className="bigMenu-item" to={"/diagnose"}>
                         <div className="item-text">Diagnose</div>
                         <div className="item-icon">
@@ -261,17 +336,17 @@ export const Navbar = ({joinNowTrigger}) => {
                             <span>Sign in to continue to oneHealth</span>
                         </div>
                         <div className="login-form">
-                            <form>
+                            <form onSubmit={checkLoginMail}>
                                 <div className="input-field">
+                                    <input type="email" id="email" required onChange={(e)=>{setLogMail(e.target.value)}}/>
                                     <label htmlFor="email"><i className="fa-regular fa-envelope"/> Email Address</label>
-                                    <input type="email" id="email"/>
                                 </div>
                                 <div className="input-field">
+                                    <input type="password" id="password" required onChange={(e)=>{setLogPass(e.target.value)}}/>
                                     <label htmlFor="password"><i className="fa-solid fa-key"/> Password</label>
-                                    <input type="password" id="password"/>
                                 </div>
                                 <div className="btn-field">
-                                    <button className="hover-btn">Log in</button>
+                                    <button className="hover-btn" type="submit">Log in</button>
                                     <span onClick={toggleLS}>Not a member yet?</span>
                                 </div>
                             </form>
@@ -287,15 +362,21 @@ export const Navbar = ({joinNowTrigger}) => {
                         <div className="login-form">
                             <form onSubmit={checkMail}>
                                 <div className="input-field">
-                                    <input type="text" id="name" onChange={(e)=>{setUsername(e.target.value)}} required/>
+                                    <input type="text" id="name" onChange={(e) => {
+                                        setUsername(e.target.value)
+                                    }} required/>
                                     <label htmlFor="name"><i className="fa-regular fa-envelope"/> Enter your name</label>
                                 </div>
                                 <div className="input-field">
-                                    <input type="text" id="regEmail" onChange={(e)=>{setEmail(e.target.value)}} required/>
+                                    <input type="text" id="regEmail" onChange={(e) => {
+                                        setEmail(e.target.value)
+                                    }} required/>
                                     <label htmlFor="regEmail"><i className="fa-regular fa-envelope"/> Email Address</label>
                                 </div>
                                 <div className="input-field">
-                                    <input type="password" id="regPass" onChange={(e)=>{setPassword(e.target.value)}} required/>
+                                    <input type="password" id="regPass" onChange={(e) => {
+                                        setPassword(e.target.value)
+                                    }} required/>
                                     <label htmlFor="regPass"><i className="fa-solid fa-key"/> Password</label>
                                 </div>
                                 <div className="btn-field">
