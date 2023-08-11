@@ -1,6 +1,7 @@
 import {Link} from "react-router-dom";
 import {useEffect, useRef, useState} from "react";
 import supabase from "../config/supabaseClient";
+import {getCookie, setCookie} from "../config/cookieMaker";
 
 export const Navbar = ({joinNowTrigger}) => {
 
