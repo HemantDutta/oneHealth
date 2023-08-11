@@ -76,6 +76,44 @@ Early detection of life-threatening conditions like brain tumors, heart diseases
 * **Early Intervention:** Early detection leads to timely treatments, potentially preventing severe disease progression.
 * **Support for Healthcare Professionals:** Doctors and clinicians can utilize **oneHealth** for preliminary screenings, streamlining patient care.
 
+## Methodology for Solving Healthcare Diagnostics Challenges with oneHealth:
+
+The development of oneHealth, aimed at revolutionizing healthcare diagnostics for brain tumors, heart disease, and diabetes, follows a rigorous and comprehensive methodology that leverages a variety of cutting-edge technologies, frameworks, and tools offered by Intel. The approach involves:
+
+- **Problem Understanding and Domain Expertise:** Our team collaborates closely with medical experts to deeply understand the challenges in diagnosing brain tumors, heart disease, and diabetes. This domain knowledge guides the entire development process.
+
+- **Architectural Design:** We design a modular architecture that incorporates React JS for the frontend, Flask for the backend, and Intel's oneAPI toolkit components such as oneDAL, TensorFlow, Intel Keras, and Intel Python for advanced data processing, machine learning, and neural network tasks.
+
+- **Frontend Development with React JS:** React JS is utilized to create a dynamic, responsive, and user-friendly frontend interface. It enables seamless interaction, intuitive visualization of medical data, and ease of use for healthcare professionals.
+
+- **Backend Implementation with Flask:** The Flask micro web framework forms the backbone of the backend, handling data processing, communication with frontend, and serving machine learning models. Flask's simplicity and efficiency are harnessed to optimize data flow.
+
+- **oneAPI Toolkit Integration:** Components of Intel's oneAPI toolkit, including oneDAL, Intel TensorFlow, Intel Keras, and Intel Python, are strategically integrated. oneDAL facilitates efficient data analysis, preprocessing, and feature extraction. TensorFlow and Intel Keras enable deep neural network development, while Intel Python provides enhanced computational capabilities.
+
+- **Model Development and Training:** Using Intel Jupyter Notebook, models are developed, trained, and fine-tuned. Intel Jupyter Notebook's interactive environment enables rapid experimentation, visualization, and collaboration among data scientists and medical experts.
+
+- **Optimization and Scalability:** Intel's performance analysis tools are employed to optimize code, ensuring efficient execution across different hardware accelerators. The scalable nature of oneAPI ensures that the platform can handle increasing patient data and evolving diagnostic requirements.
+
+- **Real-time Collaboration with devMesh:** Intel's devMesh facilitates collaboration, knowledge sharing, and idea exchange among researchers, developers, and healthcare practitioners, fostering innovation and continuous improvement.
+
+- **Validation and Testing:** Rigorous testing is conducted to validate the accuracy and performance of diagnostic algorithms. Real-world medical data is used to ensure the reliability of the diagnostic outcomes.
+
+- **Deployment and User Feedback:** The fully integrated oneHealth platform is deployed for real-world usage, and user feedback is collected to iteratively enhance the platform's usability and diagnostic capabilities.
+
+## Frameworks, Standards, and Techniques:
+
+- **React JS:** Frontend development, creating an interactive and responsive user interface.
+- **Flask:** Backend development, handling data processing, communication, and serving machine learning models.
+- **oneDAL:** Intel's Data Analytics Library for efficient data analysis and preprocessing.
+- **TensorFlow and Intel Keras:** Building and training complex neural network models for accurate disease detection.
+- **Intel Python:** Enhancing computational capabilities and data manipulation.
+- **Intel Jupyter Notebook:** Interactive development environment for model experimentation and training.
+- **Intel devMesh:** Collaboration platform for idea exchange and knowledge sharing.
+- **Performance Analysis Tools:** Ensuring code optimization and efficient execution on various hardware accelerators.
+- **Supabase:** Real-time database for seamless and responsive data storage and retrieval.
+
+
+
 ### Built With 
 
 * [![ReactJs][ReactJs]][react-url]
@@ -124,6 +162,25 @@ Overall, the use of oneDAL in our project was crucial to achieving the level of 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+## Future Scope of oneHealth
+
+The oneHealth project is poised to have a transformative impact on the healthcare landscape, offering advanced diagnostic capabilities for brain tumors, heart disease, and diabetes. As we look ahead, the future scope of oneHealth extends beyond its current capabilities, encompassing crucial aspects of the government and the health sector:
+
+- **Government Collaboration:** The integration of oneHealth into government healthcare initiatives could lead to enhanced disease surveillance, early intervention, and population health management. By leveraging the platform's accurate diagnostics, governments can make informed policy decisions and allocate resources more effectively.
+
+- **Health Sector Advancements:** oneHealth has the potential to revolutionize patient care by providing healthcare professionals with advanced diagnostic tools. This could lead to personalized treatment plans, reduced treatment costs, and improved patient outcomes, driving positive changes across the health sector.
+
+- **Data-Driven Decision Making:** The extensive data generated by oneHealth can contribute to health research and epidemiological studies. Insights gained from large-scale data analysis could aid in identifying disease patterns, risk factors, and potential outbreaks, empowering proactive healthcare strategies.
+
+- **Telemedicine and Remote Diagnostics:** In a rapidly evolving healthcare landscape, oneHealth can enable remote diagnostics through telemedicine platforms. Patients in underserved areas can access accurate diagnostic assessments, bridging geographical gaps and improving healthcare access.
+
+- **Population Health Management:** By analyzing aggregated health data, oneHealth could facilitate population-level health assessments. This data-driven approach can help identify health trends, inform public health campaigns, and guide disease prevention efforts.
+
+- **Integration of oneAPI:** Looking even further into the future, the continued utilization of Intel's oneAPI toolkit within oneHealth can drive advancements in diagnostics. The integration of additional Intel technologies and enhancements could lead to even faster, more accurate, and more versatile diagnostic capabilities.
+
+The future scope of oneHealth is promising, with its potential to reshape how governments and the health sector approach diagnostics and patient care. By harnessing the power of oneAPI and other cutting-edge technologies, oneHealth is poised to play a pivotal role in shaping the future of healthcare.
+
+
 ## What we learned
 * **Deep Learning in Healthcare:** Realized the vast potential of deep learning in revolutionizing healthcare diagnostics.
 * **oneDNN's Potential:** Leveraged oneDNN's power in accelerating deep learning computations, improving prediction accuracy and efficiency.
@@ -131,6 +188,13 @@ Overall, the use of oneDAL in our project was crucial to achieving the level of 
 * **Interdisciplinary Collaboration:** Learned the importance of merging technology and medical science to build impactful applications.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## Contributors
+
+- Hemant Dutta: 2247216
+- Indresh Hemani: 2247217
+- Joel B Koshy: 2247218
+- Jimit Shukla: 2247260
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
