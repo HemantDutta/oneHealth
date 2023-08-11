@@ -1,9 +1,12 @@
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import {useEffect, useRef, useState} from "react";
 import supabase from "../config/supabaseClient";
-import {getCookie, setCookie} from "../config/cookieMaker";
+import {getCookie, setCookie, endSession} from "../config/cookieMaker";
 
 export const Navbar = ({joinNowTrigger}) => {
+
+    //Navigator
+    const nav = useNavigate();
 
     //States
     const [serviced, setServiced] = useState(0);
@@ -245,6 +248,9 @@ export const Navbar = ({joinNowTrigger}) => {
 
             setSessionName(data[0].name);
         }
+        else{
+            nav('/');
+        }
     }
 
     //Check Session Caller
@@ -252,7 +258,13 @@ export const Navbar = ({joinNowTrigger}) => {
         if (!sessionName) {
             checkSession().then();
         }
-    }, [])
+    }, [sessionName])
+
+    //Logout
+    function logout(){
+        endSession();
+        setSessionName('');
+    }
 
     return (
         <>
@@ -278,7 +290,7 @@ export const Navbar = ({joinNowTrigger}) => {
                     {
                         sessionName &&
                         <div className="navbar-join-btn">
-                            <button>Logout</button>
+                            <button onClick={logout}>Logout</button>
                         </div>
                     }
                     <div className="navbar-hamburger-option">
