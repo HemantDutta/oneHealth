@@ -135,11 +135,11 @@ Overall, the use of oneDAL in our project was crucial to achieving the level of 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [contributors-shield]: https://img.shields.io/badge/Contributers-4-green?style=for-the-badge
-[contributors-url]: https://github.com/raison024/Smart-Garbage-Segregation/graphs/contributors
+[contributors-url]: https://github.com/HemantDutta/oneHealth/graphs/contributors
 [forks-shield]: https://img.shields.io/badge/Forks-2-blue?style=for-the-badge
-[forks-url]: https://github.com/raison024/Smart-Garbage-Segregation/network/members
+[forks-url]: https://github.com/HemantDutta/oneHealth/network/members
 [issues-shield]: https://img.shields.io/badge/Issues-0_OPEN-purple?style=for-the-badge
-[issues-url]: https://github.com/raison024/Smart-Garbage-Segregation/issues
+[issues-url]: https://github.com/HemantDutta/oneHealth/issues
 
 
 
