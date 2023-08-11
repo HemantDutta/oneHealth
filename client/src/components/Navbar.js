@@ -131,12 +131,23 @@ export const Navbar = ({joinNowTrigger}) => {
 
     //Register User
     async function registerUser(){
+        let login = document.getElementById("loginForm");
+        let reg = document.getElementById("regForm");
+
         const {status, errors} = await supabase
             .from("users")
             .insert({name: username, email: email, password: password})
 
         if(status === 201){
-            console.log("Registration Successful");
+            toggleAlert("Registration Successful! Log in to continue");
+            reg.classList.remove("active");
+            setTimeout(()=>{
+                reg.style.display = "none";
+                login.style.display = "block";
+                setTimeout(()=>{
+                    login.classList.add("active");
+                },100)
+            },400)
         }
         if(errors){
             console.log(errors);
