@@ -7,7 +7,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/HemantDutta/oneHealth">
-    <img src="https://github.com/HemantDutta/oneHealth/blob/main/client/public/assets/images/oh_heart.png" alt="Logo">
+    <img src="heart.gif" alt="Logo">
   </a>
 
   <h3 align="center">oneHealth</h3>
