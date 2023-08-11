@@ -2,8 +2,14 @@ import {Navbar} from "../components/Navbar";
 import axios from "axios";
 import {useEffect, useState} from "react";
 import {useForm} from "react-hook-form";
+import supabase from "../config/supabaseClient";
+import {getCookie} from "../config/cookieMaker";
+import {useNavigate} from "react-router-dom";
 
 export const Diagnose = () => {
+
+    //Navigator
+    const nav = useNavigate();
 
     //Form Validation
     const {register, handleSubmit, formState: {errors}} = useForm();
@@ -31,6 +37,10 @@ export const Diagnose = () => {
     const [slope, setSlope] = useState(0);
     const [restEcg, setRestEcg] = useState(0);
 
+    //Session States
+    const [sessionName, setSessionName] = useState('');
+    const [sessionID, setSessionID] = useState(0);
+
     //Sending Heart data to Flask
     function uploadHeart() {
         setLoader(true);
@@ -50,11 +60,17 @@ export const Diagnose = () => {
         formData.append("thal", thal);
 
         axios.post("http://localhost:5000/heart", formData)
-            .then((res) => {
+            .then(async (res) => {
                 setHeartRes(res.data);
                 setTimeout(() => {
                     setLoader(false);
                 }, 500)
+                const {status} = await supabase
+                    .from("predictions")
+                    .insert({user_id: sessionID, model: "Heart Disease", prediction: res.data})
+                if(status === 201) {
+                    console.log("Prediction Stored");
+                }
             })
             .catch((err) => {
                 console.log(err);
@@ -74,11 +90,17 @@ export const Diagnose = () => {
         let formData = new FormData();
         formData.append('file', brain);
         axios.post("http://localhost:5000/brain", formData)
-            .then((res) => {
+            .then(async (res) => {
                 setBrainRes(res.data);
                 setTimeout(() => {
                     setLoader(false);
                 }, 500)
+                const {status} = await supabase
+                    .from("predictions")
+                    .insert({user_id: sessionID, model: "Brain Tumor", prediction: res.data})
+                if(status === 201){
+                    console.log("Prediction Stored");
+                }
             })
             .catch((err) => {
                 console.log(err);
@@ -125,6 +147,29 @@ export const Diagnose = () => {
             }, 400)
         }
     }
+
+    //Check Session
+    async function checkSession() {
+        const sesEmail = getCookie("em");
+        if (sesEmail.length !== 0) {
+            const {data} = await supabase
+                .from("users")
+                .select()
+                .eq("email", sesEmail);
+
+            setSessionName(data[0].name);
+            setSessionID(data[0].id);
+        } else {
+            nav("/");
+        }
+    }
+
+    //Check Session Caller
+    useEffect(() => {
+        if (!sessionName) {
+            checkSession().then();
+        }
+    }, [])
 
     return (
         <>
@@ -175,8 +220,7 @@ export const Diagnose = () => {
                             <span>Fill the following details to continue</span>
                         </div>
                         <div className="model-form">
-                            <form onSubmit={handleSubmit(data => {
-                                console.log(data)})}>
+                            <form onSubmit={uploadHeart}>
                                 <div className="input-row">
                                     <div className="input-field">
                                         <input {...register("age", {required: "Please fill this field", maxLength: {value: 3, message: "Please enter a valid value"}})} type="number" name="age" id="age" onChange={(e) => {

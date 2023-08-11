@@ -264,7 +264,7 @@ export const Navbar = ({joinNowTrigger}) => {
                     <div className="navbar-links">
                         {
                             sessionName &&
-                            <Link to={"/"}>Dashboard</Link>
+                            <Link to={"/dashboard"}>Dashboard</Link>
                         }
                         <Link to={"/diagnose"}>Diagnose</Link>
                         <Link to={"/"}>About</Link>
@@ -278,7 +278,7 @@ export const Navbar = ({joinNowTrigger}) => {
                     {
                         sessionName &&
                         <div className="navbar-join-btn">
-                            <button>Dashboard</button>
+                            <button>Logout</button>
                         </div>
                     }
                     <div className="navbar-hamburger-option">

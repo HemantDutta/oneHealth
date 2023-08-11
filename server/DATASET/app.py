@@ -93,8 +93,8 @@ def disease_prediction():
         return "Break"
 
 
-file = 'diab.pkl'
-diab = pickle.load(open(file, "rb"))
+# file = 'diab.pkl'
+# diab = pickle.load(open(file, "rb"))
 
 
 @app.route('/diabetes', methods=['POST'])

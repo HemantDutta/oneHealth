@@ -777,3 +777,55 @@ nav .navbar-inner-container .navbar-hamburger-option .hamburger.clicked span:nth
     min-height: 180px;
 }
 /*==========Diagnose End==========*/
+
+/*==========Dashboard==========*/
+
+.dashboard{
+    background: linear-gradient(-45deg, #9AC5F4, #99DBF5, #A7ECEE, #FFEEBB);
+    background-size: 200% 200%;
+    -webkit-animation: heroGradient 10s ease infinite;
+    -moz-animation: heroGradient 10s ease infinite;
+    animation: heroGradient 10s ease infinite;
+}
+
+.dashboard .dashboard-gradient-bar{
+    height: 200px;
+    width: 100%;
+}
+
+.dashboard .dashboard-content{
+    background-color: #fff;
+    border-radius: 80px 80px 0 0;
+    padding: 2rem;
+}
+
+.dashboard .dashboard-content .dashboard-header{
+    font-size: 56px;
+    font-weight: bold;
+    margin: 0 auto;
+    width: max-content;
+}
+
+.dashboard .dashboard-content .dashboard-history{
+    margin: 1rem auto;
+    width: max-content;
+}
+
+.dashboard .dashboard-content .dashboard-history .history-header{
+    font-size: 36px;
+}
+
+.dashboard .dashboard-content .dashboard-history .history-table table{
+    margin-top: 1rem;
+    background-color: #fff;
+    box-shadow: -10px 10px black;
+    border: 1px solid black;
+    min-width: 500px;
+    text-align: left;
+}
+
+.dashboard .dashboard-content .dashboard-history .history-table table td, th{
+    padding: 1rem;
+}
+
+/*==========Dashboard End==========*/
