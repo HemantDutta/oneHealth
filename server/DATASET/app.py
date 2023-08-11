@@ -93,7 +93,7 @@ def disease_prediction():
         return "Break"
 
 
-# file = 'diab.pkl'
+# file = 'rf.pkl'
 # diab = pickle.load(open(file, "rb"))
 
 

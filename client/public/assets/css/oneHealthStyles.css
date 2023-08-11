@@ -9,7 +9,7 @@
 
 :root {
     --accent-color: #9ee3ff;
-    --accent-color2: #9fcaff;
+    --accent-color2: #729cd0;
     --accent-color3: #9cfdff;
     --accent-color4: #efdcb0;
     --text-font-size: calc(15px + 0.34vw);
@@ -829,3 +829,110 @@ nav .navbar-inner-container .navbar-hamburger-option .hamburger.clicked span:nth
 }
 
 /*==========Dashboard End==========*/
+
+/*==========About==========*/
+
+.about{
+    background: linear-gradient(-45deg, #9AC5F4, #99DBF5, #A7ECEE, #FFEEBB);
+    background-size: 200% 200%;
+    -webkit-animation: heroGradient 10s ease infinite;
+    -moz-animation: heroGradient 10s ease infinite;
+    animation: heroGradient 10s ease infinite;
+}
+
+.about .about-Gradient-Bar{
+    height: 200px;
+    width: 100%;
+}
+
+.about .about-content{
+    background-color: #fff;
+    border-radius: 80px 80px 0 0;
+    padding: 2rem;
+}
+
+.about .about-content .about-header{
+    font-size: 56px;
+    font-weight: bold;
+}
+
+.about .about-content .about-data-box{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    min-height: 40vh;
+    width: 90vw;
+    margin: 5rem auto;
+    clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+}
+
+.about .about-content .about-data-box > *{
+    flex: 1;
+}
+
+.about .about-content .about-data-box .box-text .text-header{
+    font-size: 36px;
+    color: var(--accent-color2);
+    font-weight: bold;
+}
+
+.about .about-content .about-data-box .box-text .text-des{
+    font-size: 20px;
+    text-align: justify;
+}
+
+.about .about-content .about-data-box .box-img{
+    text-align: center;
+}
+
+.about .about-content .about-data-box:nth-child(odd){
+    flex-direction: row-reverse;
+}
+
+.about .about-content .about-data-box .box-img img#ohLogo{
+    -webkit-animation: heartBeat 2s ease infinite;
+    -moz-animation: heartBeat 2s ease infinite;
+    animation: heartBeat 2s ease infinite;
+}
+
+@keyframes heartBeat {
+    0%{
+        transform: scale(100%);
+    }
+    50%{
+        transform: scale(105%);
+    }
+    100%{
+        transform: scale(100%);
+    }
+}
+
+@-webkit-keyframes heartBeat {
+    0%{
+        transform: scale(100%);
+    }
+    50%{
+        transform: scale(105%);
+    }
+    100%{
+        transform: scale(100%);
+    }
+}
+
+@-moz-keyframes heartBeat {
+    0%{
+        transform: scale(100%);
+    }
+    50%{
+        transform: scale(105%);
+    }
+    100%{
+        transform: scale(100%);
+    }
+}
+
+.about .about-content .about-data-box .box-img img#about4{
+    box-shadow: -10px 10px black;
+    border: 1px solid black;
+}
+/*==========About End==========*/

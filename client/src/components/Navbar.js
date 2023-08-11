@@ -235,6 +235,7 @@ export const Navbar = ({joinNowTrigger}) => {
     //Login User
     function loginUser() {
         setCookie("em", logMail, 3);
+        checkSession().then();
     }
 
     //Check Session
@@ -245,7 +246,6 @@ export const Navbar = ({joinNowTrigger}) => {
                 .from("users")
                 .select()
                 .eq("email", sesEmail);
-
             setSessionName(data[0].name);
         }
         else{
@@ -279,7 +279,7 @@ export const Navbar = ({joinNowTrigger}) => {
                             <Link to={"/dashboard"}>Dashboard</Link>
                         }
                         <Link to={"/diagnose"}>Diagnose</Link>
-                        <Link to={"/"}>About</Link>
+                        <Link to={"/about"}>About</Link>
                     </div>
                     {
                         !sessionName &&

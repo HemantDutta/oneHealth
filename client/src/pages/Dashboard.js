@@ -38,7 +38,7 @@ export const Dashboard = () => {
         if (!sessionName) {
             checkSession().then();
         }
-    }, [])
+    }, [sessionName])
 
     //Prediction History
     async function getPrediction(){

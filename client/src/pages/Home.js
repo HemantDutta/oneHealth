@@ -3,7 +3,11 @@ import {useState} from "react";
 import {getCookie} from "../config/cookieMaker";
 import supabase from "../config/supabaseClient";
 import {useEffect} from "react";
+import {useNavigate} from "react-router-dom";
 export const Home = () => {
+
+    //Navigator
+    const nav = useNavigate();
 
     //States
     const [joinNowTrigger, setJoinNowTrigger] = useState(0);
@@ -29,7 +33,7 @@ export const Home = () => {
         if (!sessionName) {
             checkSession().then();
         }
-    }, [])
+    }, [sessionName])
 
     return(
         <>
@@ -52,7 +56,7 @@ export const Home = () => {
                                 }
                                 {
                                     sessionName &&
-                                    <button className="hover-btn">Dashboard</button>
+                                    <button className="hover-btn" onClick={()=>{nav("/dashboard")}}>Dashboard</button>
                                 }
                             </div>
                         </div>
