@@ -440,6 +440,7 @@ nav .navbar-inner-container .navbar-hamburger-option .hamburger.clicked span:nth
     border-radius: 20px;
     border-top: 10px solid var(--accent-color4);
     z-index: 111;
+    animation: hoverMSG 25s ease infinite;
 }
 
 .home-container .hero .hero-content .hero-right .hero-right-img .hovering-msg:nth-child(3) {
@@ -453,6 +454,34 @@ nav .navbar-inner-container .navbar-hamburger-option .hamburger.clicked span:nth
     border-radius: 20px;
     border-top: 10px solid var(--accent-color3);
     z-index: 111;
+    animation: hoverMSG 20s reverse infinite;
+}
+
+@keyframes hoverMSG {
+    0% {
+        transform: translate(0, 0);
+    }
+    15% {
+        transform: translate(2px, 2px);
+    }
+    30% {
+        transform: translate(-10px, 8px);
+    }
+    45% {
+        transform: translate(0, 5px);
+    }
+    60% {
+        transform: translate(2px, -3px);
+    }
+    75% {
+        transform: translate(-8px, 2px);
+    }
+    90% {
+        transform: translate(-2px, 5px);
+    }
+    100% {
+        transform: translate(0, 0);
+    }
 }
 
 @media screen and (max-width: 1091px) {
@@ -461,7 +490,7 @@ nav .navbar-inner-container .navbar-hamburger-option .hamburger.clicked span:nth
     }
 }
 
-.home-container .hero .hero-content .hero-left a.hero-left-branding{
+.home-container .hero .hero-content .hero-left a.hero-left-branding {
     display: flex;
     align-items: center;
     column-gap: 1rem;
@@ -469,12 +498,13 @@ nav .navbar-inner-container .navbar-hamburger-option .hamburger.clicked span:nth
     text-decoration: none;
 }
 
-.home-container .hero .hero-content .hero-left .hero-left-branding span{
+.home-container .hero .hero-content .hero-left .hero-left-branding span {
     font-size: 26px;
     font-weight: bold;
+    color: white;
 }
 
-.home-container .hero .hero-content .hero-left .hero-left-branding img{
+.home-container .hero .hero-content .hero-left .hero-left-branding img {
     height: 80px;
     box-shadow: -10px 10px black;
 }
@@ -565,7 +595,7 @@ nav .navbar-inner-container .navbar-hamburger-option .hamburger.clicked span:nth
     border-radius: 0 0 20px 20px;
 }
 
-.joinNow .joinNow-content form .input-field input:valid + label{
+.joinNow .joinNow-content form .input-field input:valid + label {
     transform: translateY(-175%);
     background-color: #fff;
     border-radius: 0 0 20px 20px;
@@ -590,18 +620,18 @@ nav .navbar-inner-container .navbar-hamburger-option .hamburger.clicked span:nth
 
 /*==========One Alert==========*/
 
-.one-alert{
+.one-alert {
     position: fixed;
     bottom: 25px;
     left: 50%;
     transform: translateX(-50%);
     z-index: 1111;
     display: none;
-    transition: all 0.4s cubic-bezier(.17,.67,.83,.67);
+    transition: all 0.4s cubic-bezier(.17, .67, .83, .67);
     opacity: 0;
 }
 
-.one-alert .one-alert-container{
+.one-alert .one-alert-container {
     background-color: #fff;
     padding: 1rem;
     box-shadow: -10px 10px black;
@@ -611,15 +641,15 @@ nav .navbar-inner-container .navbar-hamburger-option .hamburger.clicked span:nth
     font-weight: bold;
 }
 
-.one-alert .one-alert-container span{
+.one-alert .one-alert-container span {
     margin-top: 15px;
 }
 
-.one-alert.active{
+.one-alert.active {
     opacity: 1;
 }
 
-.one-alert .one-alert-container i{
+.one-alert .one-alert-container i {
     position: absolute;
     right: 5px;
     top: 5px;
@@ -696,11 +726,11 @@ nav .navbar-inner-container .navbar-hamburger-option .hamburger.clicked span:nth
     color: grey;
 }
 
-.diagnose .diagnose-content .model-form{
+.diagnose .diagnose-content .model-form {
     margin: 2rem 0 0 0;
 }
 
-.diagnose .diagnose-content .tumor-model-content .model-form input{
+.diagnose .diagnose-content .tumor-model-content .model-form input {
     padding: 10px;
     background-color: #fff;
     border: 1px solid black;
@@ -708,36 +738,36 @@ nav .navbar-inner-container .navbar-hamburger-option .hamburger.clicked span:nth
     box-shadow: -5px 5px black;
 }
 
-.diagnose .diagnose-content .model-result{
+.diagnose .diagnose-content .model-result {
     margin-top: 3rem;
 }
 
-.diagnose .diagnose-content .model-result span{
+.diagnose .diagnose-content .model-result span {
     font-size: 36px;
     font-weight: bold;
 }
 
-.diagnose .diagnose-content .activeModel{
+.diagnose .diagnose-content .activeModel {
     opacity: 1;
     display: block;
 }
 
-.diagnose .diagnose-content .heart-model-content .model-form, .diagnose .diagnose-content .diabetes-model-content .model-form{
+.diagnose .diagnose-content .heart-model-content .model-form, .diagnose .diagnose-content .diabetes-model-content .model-form {
     width: 650px;
 }
 
-.diagnose .diagnose-content .heart-model-content .model-form .input-row, .diagnose .diagnose-content .diabetes-model-content .model-form .input-row{
+.diagnose .diagnose-content .heart-model-content .model-form .input-row, .diagnose .diagnose-content .diabetes-model-content .model-form .input-row {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
 }
 
-.diagnose .diagnose-content .heart-model-content .model-form .input-row .input-field, .diagnose .diagnose-content .diabetes-model-content .model-form .input-row .input-field{
+.diagnose .diagnose-content .heart-model-content .model-form .input-row .input-field, .diagnose .diagnose-content .diabetes-model-content .model-form .input-row .input-field {
     position: relative;
     margin: 20px 0;
 }
 
-.diagnose .diagnose-content .heart-model-content .model-form .input-row .input-field input, .diagnose .diagnose-content .diabetes-model-content .model-form .input-row .input-field input{
+.diagnose .diagnose-content .heart-model-content .model-form .input-row .input-field input, .diagnose .diagnose-content .diabetes-model-content .model-form .input-row .input-field input {
     background-color: #e8f1f1;
     border: none;
     padding: 1rem;
@@ -745,7 +775,7 @@ nav .navbar-inner-container .navbar-hamburger-option .hamburger.clicked span:nth
     font-size: 20px;
 }
 
-.diagnose .diagnose-content .heart-model-content .model-form .input-row .input-field select, .diagnose .diagnose-content .diabetes-model-content .model-form .input-row .input-field select{
+.diagnose .diagnose-content .heart-model-content .model-form .input-row .input-field select, .diagnose .diagnose-content .diabetes-model-content .model-form .input-row .input-field select {
     padding: 10px;
     height: 55px;
     width: 275px;
@@ -754,11 +784,11 @@ nav .navbar-inner-container .navbar-hamburger-option .hamburger.clicked span:nth
     border: none;
 }
 
-.diagnose .diagnose-content .heart-model-content .model-form .input-row .input-field .full-select, .diagnose .diagnose-content .diabetes-model-content .model-form .input-row .input-field .full-select{
+.diagnose .diagnose-content .heart-model-content .model-form .input-row .input-field .full-select, .diagnose .diagnose-content .diabetes-model-content .model-form .input-row .input-field .full-select {
     width: 585px;
 }
 
-.diagnose .diagnose-content .heart-model-content .model-form .input-row .input-field label, .diagnose .diagnose-content .diabetes-model-content .model-form .input-row .input-field label{
+.diagnose .diagnose-content .heart-model-content .model-form .input-row .input-field label, .diagnose .diagnose-content .diabetes-model-content .model-form .input-row .input-field label {
     position: absolute;
     top: 50%;
     left: 0;
@@ -768,37 +798,38 @@ nav .navbar-inner-container .navbar-hamburger-option .hamburger.clicked span:nth
     padding: 0 10px;
 }
 
-.diagnose .diagnose-content .heart-model-content .model-form .input-row .input-field:focus-within label, .diagnose .diagnose-content .diabetes-model-content .model-form .input-row .input-field:focus-within label{
+.diagnose .diagnose-content .heart-model-content .model-form .input-row .input-field:focus-within label, .diagnose .diagnose-content .diabetes-model-content .model-form .input-row .input-field:focus-within label {
     transform: translateY(-175%);
     background-color: #fff;
     border-radius: 0 0 20px 20px;
 }
 
-.diagnose .diagnose-content .heart-model-content .model-form .input-row .input-field input:valid + label, .diagnose .diagnose-content .diabetes-model-content .model-form .input-row .input-field input:valid + label{
+.diagnose .diagnose-content .heart-model-content .model-form .input-row .input-field input:valid + label, .diagnose .diagnose-content .diabetes-model-content .model-form .input-row .input-field input:valid + label {
     transform: translateY(-175%);
     background-color: #fff;
     border-radius: 0 0 20px 20px;
 }
 
-.diagnose .diagnose-content .heart-model-content .model-form .btn-field, .diagnose .diagnose-content .diabetes-model-content .model-form .btn-field{
+.diagnose .diagnose-content .heart-model-content .model-form .btn-field, .diagnose .diagnose-content .diabetes-model-content .model-form .btn-field {
     text-align: center;
     margin-top: 1rem;
 }
 
-.diagnose .diagnose-content .heart-model-content .model-form .btn-field button, .diagnose .diagnose-content .diabetes-model-content .model-form .btn-field button{
+.diagnose .diagnose-content .heart-model-content .model-form .btn-field button, .diagnose .diagnose-content .diabetes-model-content .model-form .btn-field button {
     background-color: #fff;
     border: 1px solid black;
     color: black;
 }
 
-.diagnose .diagnose-content .heart-model-content .model-result, .diagnose .diagnose-content .diabetes-model-content .model-result{
+.diagnose .diagnose-content .heart-model-content .model-result, .diagnose .diagnose-content .diabetes-model-content .model-result {
     min-height: 180px;
 }
+
 /*==========Diagnose End==========*/
 
 /*==========Dashboard==========*/
 
-.dashboard{
+.dashboard {
     background: linear-gradient(-45deg, #9AC5F4, #99DBF5, #A7ECEE, #FFEEBB);
     background-size: 200% 200%;
     -webkit-animation: heroGradient 10s ease infinite;
@@ -806,34 +837,36 @@ nav .navbar-inner-container .navbar-hamburger-option .hamburger.clicked span:nth
     animation: heroGradient 10s ease infinite;
 }
 
-.dashboard .dashboard-gradient-bar{
+.dashboard .dashboard-gradient-bar {
     height: 200px;
     width: 100%;
+    display: grid;
+    place-items: center;
 }
 
-.dashboard .dashboard-content{
+.dashboard .dashboard-content {
     background-color: #fff;
     border-radius: 80px 80px 0 0;
     padding: 2rem;
 }
 
-.dashboard .dashboard-content .dashboard-header{
+.dashboard .dashboard-content .dashboard-header {
     font-size: 56px;
     font-weight: bold;
     margin: 0 auto;
     width: max-content;
 }
 
-.dashboard .dashboard-content .dashboard-history{
+.dashboard .dashboard-content .dashboard-history {
     margin: 1rem auto;
     width: max-content;
 }
 
-.dashboard .dashboard-content .dashboard-history .history-header{
+.dashboard .dashboard-content .dashboard-history .history-header {
     font-size: 36px;
 }
 
-.dashboard .dashboard-content .dashboard-history .history-table table{
+.dashboard .dashboard-content .dashboard-history .history-table table {
     margin-top: 1rem;
     background-color: #fff;
     box-shadow: -10px 10px black;
@@ -842,7 +875,7 @@ nav .navbar-inner-container .navbar-hamburger-option .hamburger.clicked span:nth
     text-align: left;
 }
 
-.dashboard .dashboard-content .dashboard-history .history-table table td, th{
+.dashboard .dashboard-content .dashboard-history .history-table table td, th {
     padding: 1rem;
 }
 
@@ -850,7 +883,7 @@ nav .navbar-inner-container .navbar-hamburger-option .hamburger.clicked span:nth
 
 /*==========About==========*/
 
-.about{
+.about {
     background: linear-gradient(-45deg, #9AC5F4, #99DBF5, #A7ECEE, #FFEEBB);
     background-size: 200% 200%;
     -webkit-animation: heroGradient 10s ease infinite;
@@ -858,23 +891,23 @@ nav .navbar-inner-container .navbar-hamburger-option .hamburger.clicked span:nth
     animation: heroGradient 10s ease infinite;
 }
 
-.about .about-Gradient-Bar{
+.about .about-Gradient-Bar {
     height: 200px;
     width: 100%;
 }
 
-.about .about-content{
+.about .about-content {
     background-color: #fff;
     border-radius: 80px 80px 0 0;
     padding: 2rem;
 }
 
-.about .about-content .about-header{
+.about .about-content .about-header {
     font-size: 56px;
     font-weight: bold;
 }
 
-.about .about-content .about-data-box{
+.about .about-content .about-data-box {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -884,73 +917,74 @@ nav .navbar-inner-container .navbar-hamburger-option .hamburger.clicked span:nth
     clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
 }
 
-.about .about-content .about-data-box > *{
+.about .about-content .about-data-box > * {
     flex: 1;
 }
 
-.about .about-content .about-data-box .box-text .text-header{
+.about .about-content .about-data-box .box-text .text-header {
     font-size: 36px;
     color: var(--accent-color2);
     font-weight: bold;
 }
 
-.about .about-content .about-data-box .box-text .text-des{
+.about .about-content .about-data-box .box-text .text-des {
     font-size: 20px;
     text-align: justify;
 }
 
-.about .about-content .about-data-box .box-img{
+.about .about-content .about-data-box .box-img {
     text-align: center;
 }
 
-.about .about-content .about-data-box:nth-child(odd){
+.about .about-content .about-data-box:nth-child(odd) {
     flex-direction: row-reverse;
 }
 
-.about .about-content .about-data-box .box-img img#ohLogo{
+.about .about-content .about-data-box .box-img img#ohLogo {
     -webkit-animation: heartBeat 2s ease infinite;
     -moz-animation: heartBeat 2s ease infinite;
     animation: heartBeat 2s ease infinite;
 }
 
 @keyframes heartBeat {
-    0%{
+    0% {
         transform: scale(100%);
     }
-    50%{
+    50% {
         transform: scale(105%);
     }
-    100%{
+    100% {
         transform: scale(100%);
     }
 }
 
 @-webkit-keyframes heartBeat {
-    0%{
+    0% {
         transform: scale(100%);
     }
-    50%{
+    50% {
         transform: scale(105%);
     }
-    100%{
+    100% {
         transform: scale(100%);
     }
 }
 
 @-moz-keyframes heartBeat {
-    0%{
+    0% {
         transform: scale(100%);
     }
-    50%{
+    50% {
         transform: scale(105%);
     }
-    100%{
+    100% {
         transform: scale(100%);
     }
 }
 
-.about .about-content .about-data-box .box-img img#about4{
+.about .about-content .about-data-box .box-img img#about4 {
     box-shadow: -10px 10px black;
     border: 1px solid black;
 }
+
 /*==========About End==========*/

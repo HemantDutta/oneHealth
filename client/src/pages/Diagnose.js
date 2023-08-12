@@ -199,7 +199,9 @@ export const Diagnose = () => {
         <>
             <Navbar/>
             <div className="diagnose">
-                <div className="diagnose-gradient-bar"/>
+                <div className="diagnose-gradient-bar">
+                    <span>Diagnose</span>
+                </div>
                 <div className="diagnose-content">
                     <div className="diagnose-model-bar">
                         <span className="model-chip active" id="brainChip" onClick={() => {
