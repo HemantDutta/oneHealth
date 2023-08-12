@@ -9,7 +9,7 @@
 
 :root {
     --accent-color: #9ee3ff;
-    --accent-color2: #729cd0;
+    --accent-color2: #649ee5;
     --accent-color3: #9cfdff;
     --accent-color4: #efdcb0;
     --text-font-size: calc(15px + 0.34vw);
@@ -461,6 +461,24 @@ nav .navbar-inner-container .navbar-hamburger-option .hamburger.clicked span:nth
     }
 }
 
+.home-container .hero .hero-content .hero-left a.hero-left-branding{
+    display: flex;
+    align-items: center;
+    column-gap: 1rem;
+    margin-top: 2rem;
+    text-decoration: none;
+}
+
+.home-container .hero .hero-content .hero-left .hero-left-branding span{
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.home-container .hero .hero-content .hero-left .hero-left-branding img{
+    height: 80px;
+    box-shadow: -10px 10px black;
+}
+
 /*==========Home -> Hero End==========*/
 
 /*==========Navbar -> Join Now==========*/
@@ -658,7 +676,7 @@ nav .navbar-inner-container .navbar-hamburger-option .hamburger.clicked span:nth
     background-color: var(--accent-color3);
 }
 
-.diagnose .diagnose-content .tumor-model-content, .diagnose .diagnose-content .heart-model-content {
+.diagnose .diagnose-content .tumor-model-content, .diagnose .diagnose-content .heart-model-content, .diagnose .diagnose-content .diabetes-model-content {
     margin-top: 5rem;
     width: max-content;
     margin-left: auto;
@@ -704,22 +722,22 @@ nav .navbar-inner-container .navbar-hamburger-option .hamburger.clicked span:nth
     display: block;
 }
 
-.diagnose .diagnose-content .heart-model-content .model-form{
+.diagnose .diagnose-content .heart-model-content .model-form, .diagnose .diagnose-content .diabetes-model-content .model-form{
     width: 650px;
 }
 
-.diagnose .diagnose-content .heart-model-content .model-form .input-row{
+.diagnose .diagnose-content .heart-model-content .model-form .input-row, .diagnose .diagnose-content .diabetes-model-content .model-form .input-row{
     display: flex;
     align-items: center;
     justify-content: space-evenly;
 }
 
-.diagnose .diagnose-content .heart-model-content .model-form .input-row .input-field{
+.diagnose .diagnose-content .heart-model-content .model-form .input-row .input-field, .diagnose .diagnose-content .diabetes-model-content .model-form .input-row .input-field{
     position: relative;
     margin: 20px 0;
 }
 
-.diagnose .diagnose-content .heart-model-content .model-form .input-row .input-field input{
+.diagnose .diagnose-content .heart-model-content .model-form .input-row .input-field input, .diagnose .diagnose-content .diabetes-model-content .model-form .input-row .input-field input{
     background-color: #e8f1f1;
     border: none;
     padding: 1rem;
@@ -727,7 +745,7 @@ nav .navbar-inner-container .navbar-hamburger-option .hamburger.clicked span:nth
     font-size: 20px;
 }
 
-.diagnose .diagnose-content .heart-model-content .model-form .input-row .input-field select{
+.diagnose .diagnose-content .heart-model-content .model-form .input-row .input-field select, .diagnose .diagnose-content .diabetes-model-content .model-form .input-row .input-field select{
     padding: 10px;
     height: 55px;
     width: 275px;
@@ -736,11 +754,11 @@ nav .navbar-inner-container .navbar-hamburger-option .hamburger.clicked span:nth
     border: none;
 }
 
-.diagnose .diagnose-content .heart-model-content .model-form .input-row .input-field .full-select{
+.diagnose .diagnose-content .heart-model-content .model-form .input-row .input-field .full-select, .diagnose .diagnose-content .diabetes-model-content .model-form .input-row .input-field .full-select{
     width: 585px;
 }
 
-.diagnose .diagnose-content .heart-model-content .model-form .input-row .input-field label{
+.diagnose .diagnose-content .heart-model-content .model-form .input-row .input-field label, .diagnose .diagnose-content .diabetes-model-content .model-form .input-row .input-field label{
     position: absolute;
     top: 50%;
     left: 0;
@@ -750,30 +768,30 @@ nav .navbar-inner-container .navbar-hamburger-option .hamburger.clicked span:nth
     padding: 0 10px;
 }
 
-.diagnose .diagnose-content .heart-model-content .model-form .input-row .input-field:focus-within label{
+.diagnose .diagnose-content .heart-model-content .model-form .input-row .input-field:focus-within label, .diagnose .diagnose-content .diabetes-model-content .model-form .input-row .input-field:focus-within label{
     transform: translateY(-175%);
     background-color: #fff;
     border-radius: 0 0 20px 20px;
 }
 
-.diagnose .diagnose-content .heart-model-content .model-form .input-row .input-field input:valid + label{
+.diagnose .diagnose-content .heart-model-content .model-form .input-row .input-field input:valid + label, .diagnose .diagnose-content .diabetes-model-content .model-form .input-row .input-field input:valid + label{
     transform: translateY(-175%);
     background-color: #fff;
     border-radius: 0 0 20px 20px;
 }
 
-.diagnose .diagnose-content .heart-model-content .model-form .btn-field{
+.diagnose .diagnose-content .heart-model-content .model-form .btn-field, .diagnose .diagnose-content .diabetes-model-content .model-form .btn-field{
     text-align: center;
     margin-top: 1rem;
 }
 
-.diagnose .diagnose-content .heart-model-content .model-form .btn-field button{
+.diagnose .diagnose-content .heart-model-content .model-form .btn-field button, .diagnose .diagnose-content .diabetes-model-content .model-form .btn-field button{
     background-color: #fff;
     border: 1px solid black;
     color: black;
 }
 
-.diagnose .diagnose-content .heart-model-content .model-result{
+.diagnose .diagnose-content .heart-model-content .model-result, .diagnose .diagnose-content .diabetes-model-content .model-result{
     min-height: 180px;
 }
 /*==========Diagnose End==========*/

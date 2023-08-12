@@ -247,8 +247,7 @@ export const Navbar = ({joinNowTrigger}) => {
                 .select()
                 .eq("email", sesEmail);
             setSessionName(data[0].name);
-        }
-        else{
+        } else {
             nav('/');
         }
     }
@@ -261,7 +260,7 @@ export const Navbar = ({joinNowTrigger}) => {
     }, [sessionName])
 
     //Logout
-    function logout(){
+    function logout() {
         endSession();
         setSessionName('');
     }
@@ -271,7 +270,9 @@ export const Navbar = ({joinNowTrigger}) => {
             <nav>
                 <div className="navbar-inner-container">
                     <div className="navbar-logo">
-                        <img src="assets/images/oneHealth_horizontal.png" alt="oneHealth Logo"/>
+                        <Link to={"/"}>
+                            <img src="assets/images/oneHealth_horizontal.png" alt="oneHealth Logo"/>
+                        </Link>
                     </div>
                     <div className="navbar-links">
                         {
@@ -350,11 +351,15 @@ export const Navbar = ({joinNowTrigger}) => {
                         <div className="login-form">
                             <form onSubmit={checkLoginMail}>
                                 <div className="input-field">
-                                    <input type="email" id="email" required onChange={(e)=>{setLogMail(e.target.value)}}/>
+                                    <input type="email" id="email" required onChange={(e) => {
+                                        setLogMail(e.target.value)
+                                    }}/>
                                     <label htmlFor="email"><i className="fa-regular fa-envelope"/> Email Address</label>
                                 </div>
                                 <div className="input-field">
-                                    <input type="password" id="password" required onChange={(e)=>{setLogPass(e.target.value)}}/>
+                                    <input type="password" id="password" required onChange={(e) => {
+                                        setLogPass(e.target.value)
+                                    }}/>
                                     <label htmlFor="password"><i className="fa-solid fa-key"/> Password</label>
                                 </div>
                                 <div className="btn-field">

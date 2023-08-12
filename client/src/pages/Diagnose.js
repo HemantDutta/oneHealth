@@ -68,7 +68,7 @@ export const Diagnose = () => {
                 const {status} = await supabase
                     .from("predictions")
                     .insert({user_id: sessionID, model: "Heart Disease", prediction: res.data})
-                if(status === 201) {
+                if (status === 201) {
                     console.log("Prediction Stored");
                 }
             })
@@ -98,7 +98,7 @@ export const Diagnose = () => {
                 const {status} = await supabase
                     .from("predictions")
                     .insert({user_id: sessionID, model: "Brain Tumor", prediction: res.data})
-                if(status === 201){
+                if (status === 201) {
                     console.log("Prediction Stored");
                 }
             })
@@ -115,20 +115,29 @@ export const Diagnose = () => {
         }
     }, [brain])
 
+    //Function to send Diabetes data to Flask
+    async function uploadDiabetes() {
+
+    }
+
     //Model Switcher
     function modelSwitcher(x) {
         let brain = document.getElementById("brain");
         let heart = document.getElementById("heart");
+        let diabetes = document.getElementById("diabetes");
         let brainChip = document.getElementById("brainChip");
         let heartChip = document.getElementById("heartChip");
+        let diabetesChip = document.getElementById("diabetesChip");
 
 
         if (x === "brain") {
             brainChip.classList.add("active");
             heartChip.classList.remove("active");
+            diabetesChip.classList.remove("active");
             heart.classList.remove("activeModel");
             setTimeout(() => {
                 heart.style.display = "none";
+                diabetes.style.display = "none";
                 brain.style.display = "block";
                 setTimeout(() => {
                     brain.classList.add("activeModel");
@@ -137,12 +146,27 @@ export const Diagnose = () => {
         } else if (x === "heart") {
             heartChip.classList.add("active");
             brainChip.classList.remove("active");
+            diabetesChip.classList.remove("active");
             brain.classList.remove("activeModel");
             setTimeout(() => {
                 brain.style.display = "none";
+                diabetes.style.display = "none";
                 heart.style.display = "block";
                 setTimeout(() => {
                     heart.classList.add("activeModel");
+                }, 100)
+            }, 400)
+        } else if (x === "diabetes") {
+            diabetesChip.classList.add("active");
+            brainChip.classList.remove("active");
+            heartChip.classList.remove("active");
+            brain.classList.remove("activeModel");
+            setTimeout(() => {
+                brain.style.display = "none";
+                heart.style.display = "none";
+                diabetes.style.display = "block";
+                setTimeout(() => {
+                    diabetes.classList.add("activeModel");
                 }, 100)
             }, 400)
         }
@@ -184,7 +208,9 @@ export const Diagnose = () => {
                         <span className="model-chip" id="heartChip" onClick={() => {
                             modelSwitcher("heart")
                         }}>Heart Disease</span>
-                        <span className="model-chip" id="diabetes">Diabetes</span>
+                        <span className="model-chip" id="diabetesChip" onClick={() => {
+                            modelSwitcher("diabetes")
+                        }}>Diabetes</span>
                     </div>
                     <div className="tumor-model-content activeModel" id="brain">
                         <div className="model-header">
@@ -344,6 +370,159 @@ export const Diagnose = () => {
                                             <option value="0">Normal</option>
                                             <option value="1">Having ST-T wave Abnormality</option>
                                             <option value="2">showing probable or definite left ventricular hypertrophy by Estes' criteria</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div className="btn-field">
+                                    <button className="hover-btn" type="submit">Submit</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div className="model-result">
+                            {
+                                loader &&
+                                <img src="assets/images/oneHealth_loader.svg" alt="loader"/>
+                            }
+                            {
+                                !loader && heartRes.length !== 0 &&
+                                <>
+                                    <span>Result: </span>
+                                    <span>{heartRes}</span>
+                                </>
+                            }
+                        </div>
+                    </div>
+                    <div className="diabetes-model-content" id="diabetes">
+                        <div className="model-header">
+                            <span>Diabetes Prediction</span>
+                        </div>
+                        <div className="model-des">
+                            <span>Fill the following details to continue</span>
+                        </div>
+                        <div className="model-form">
+                            <form onSubmit={uploadDiabetes}>
+                                <div className="input-row">
+                                    <div className="input-field">
+                                        <input type="number" name="dAge" id="dAge" required/>
+                                        <label htmlFor="dAge">Age</label>
+                                    </div>
+                                    <div className="input-field">
+                                        <select name="dGender" id="dGender" required>
+                                            <option value="">Gender</option>
+                                            <option value="1">Male</option>
+                                            <option value="0">Female</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div className="input-row">
+                                    <div className="input-field">
+                                        <select name="polyuria" id="polyuria">
+                                            <option value="">Polyuria</option>
+                                            <option value="1">Yes</option>
+                                            <option value="0">No</option>
+                                        </select>
+                                    </div>
+                                    <div className="input-field">
+                                        <select name="polydispia" id="polydispia">
+                                            <option value="">Polydispia</option>
+                                            <option value="1">Yes</option>
+                                            <option value="0">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div className="input-row">
+                                    <div className="input-field">
+                                        <select name="swl" id="swl">
+                                            <option value="">Sudden Weight Loss</option>
+                                            <option value="1">Yes</option>
+                                            <option value="0">No</option>
+                                        </select>
+                                    </div>
+                                    <div className="input-field">
+                                        <select name="weakness" id="weakness">
+                                            <option value="">Weakness</option>
+                                            <option value="1">Yes</option>
+                                            <option value="0">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div className="input-row">
+                                    <div className="input-field">
+                                        <select name="polyphagia" id="polyphagia">
+                                            <option value="">Polyphagia</option>
+                                            <option value="1">Yes</option>
+                                            <option value="0">No</option>
+                                        </select>
+                                    </div>
+                                    <div className="input-field">
+                                        <select name="gt" id="gt">
+                                            <option value="">Genital Thrush</option>
+                                            <option value="1">Yes</option>
+                                            <option value="0">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div className="input-row">
+                                    <div className="input-field">
+                                        <select name="vb" id="vb">
+                                            <option value="">Visual Blurring</option>
+                                            <option value="1">Yes</option>
+                                            <option value="0">No</option>
+                                        </select>
+                                    </div>
+                                    <div className="input-field">
+                                        <select name="itch" id="itch">
+                                            <option value="">Itching</option>
+                                            <option value="1">Yes</option>
+                                            <option value="0">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div className="input-row">
+                                    <div className="input-field">
+                                        <select name="irritability" id="irritability">
+                                            <option value="">Irritability</option>
+                                            <option value="1">Yes</option>
+                                            <option value="0">No</option>
+                                        </select>
+                                    </div>
+                                    <div className="input-field">
+                                        <select name="dh" id="dh">
+                                            <option value="">Delayed Healing</option>
+                                            <option value="1">Yes</option>
+                                            <option value="0">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div className="input-row">
+                                    <div className="input-field">
+                                        <select name="pp" id="pp">
+                                            <option value="">Partial Paresis</option>
+                                            <option value="1">Yes</option>
+                                            <option value="0">No</option>
+                                        </select>
+                                    </div>
+                                    <div className="input-field">
+                                        <select name="ms" id="ms">
+                                            <option value="">Muscle Stiffness</option>
+                                            <option value="1">Yes</option>
+                                            <option value="0">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div className="input-row">
+                                    <div className="input-field">
+                                        <select name="ap" id="ap">
+                                            <option value="">Alopecia</option>
+                                            <option value="1">Yes</option>
+                                            <option value="0">No</option>
+                                        </select>
+                                    </div>
+                                    <div className="input-field">
+                                        <select name="obs" id="obs">
+                                            <option value="">Obesity</option>
+                                            <option value="1">Yes</option>
+                                            <option value="0">No</option>
                                         </select>
                                     </div>
                                 </div>

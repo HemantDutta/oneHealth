@@ -16,6 +16,7 @@ export const Dashboard = () => {
 
     //Dashboard Data
     const [history, setHistory] = useState([]);
+    const [loader, setLoader] = useState(true);
 
     //Check Session
     async function checkSession() {
@@ -50,6 +51,7 @@ export const Dashboard = () => {
             console.log(errors);
         }
         setHistory(data);
+        setLoader(false);
     }
 
     //Get Prediction Data
@@ -72,26 +74,33 @@ export const Dashboard = () => {
                         <div className="history-header">
                             <span>Prediction History</span>
                         </div>
-                        <div className="history-table">
-                            <table>
-                                <tr>
-                                    <th>Model</th>
-                                    <th>Date & Time</th>
-                                    <th>Prediction</th>
-                                </tr>
-                                {
-                                    history.map((value,index)=>{
-                                        return(
-                                            <tr key={index}>
-                                                <td>{value.model}</td>
-                                                <td>{value.created_at}</td>
-                                                <td>{value.prediction}</td>
-                                            </tr>
-                                        )
-                                    })
-                                }
-                            </table>
-                        </div>
+                        {
+                            !loader &&
+                            <div className="history-table">
+                                <table>
+                                    <tr>
+                                        <th>Model</th>
+                                        <th>Date & Time</th>
+                                        <th>Prediction</th>
+                                    </tr>
+                                    {
+                                        history.map((value,index)=>{
+                                            return(
+                                                <tr key={index}>
+                                                    <td>{value.model}</td>
+                                                    <td>{value.created_at}</td>
+                                                    <td>{value.prediction}</td>
+                                                </tr>
+                                            )
+                                        })
+                                    }
+                                </table>
+                            </div>
+                        }
+                        {
+                            loader &&
+                            <img src="assets/images/oneHealth_loader.svg" alt="Loading..."/>
+                        }
                     </div>
                 </div>
             </div>

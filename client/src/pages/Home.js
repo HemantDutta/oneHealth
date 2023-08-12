@@ -4,6 +4,7 @@ import {getCookie} from "../config/cookieMaker";
 import supabase from "../config/supabaseClient";
 import {useEffect} from "react";
 import {useNavigate} from "react-router-dom";
+
 export const Home = () => {
 
     //Navigator
@@ -35,7 +36,7 @@ export const Home = () => {
         }
     }, [sessionName])
 
-    return(
+    return (
         <>
             <Navbar joinNowTrigger={joinNowTrigger}/>
             <div className="home-container">
@@ -52,13 +53,21 @@ export const Home = () => {
                             <div className="hero-left-cta">
                                 {
                                     !sessionName &&
-                                    <button className="hover-btn" onClick={()=>{setJoinNowTrigger((joinNowTrigger)=>joinNowTrigger+1)}}>Join Now</button>
+                                    <button className="hover-btn" onClick={() => {
+                                        setJoinNowTrigger((joinNowTrigger) => joinNowTrigger + 1)
+                                    }}>Join Now</button>
                                 }
                                 {
                                     sessionName &&
-                                    <button className="hover-btn" onClick={()=>{nav("/dashboard")}}>Dashboard</button>
+                                    <button className="hover-btn" onClick={() => {
+                                        nav("/dashboard")
+                                    }}>Dashboard</button>
                                 }
                             </div>
+                            <a className="hero-left-branding" href="https://www.intel.com/content/www/us/en/developer/tools/oneapi/overview.html" rel="noreferrer" target="_blank">
+                                <img src="assets/images/oneapi2.png" alt="Intel oneAPI"/>
+                                <span>Powered by Intel<sup>&reg;</sup> oneAPI</span>
+                            </a>
                         </div>
                         <div className="hero-right">
                             <div className="hero-right-img">
