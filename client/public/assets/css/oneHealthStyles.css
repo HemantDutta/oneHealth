@@ -672,6 +672,23 @@ nav .navbar-inner-container .navbar-hamburger-option .hamburger.clicked span:nth
 .diagnose .diagnose-gradient-bar {
     height: 200px;
     width: 100%;
+    position: relative;
+}
+
+.diagnose .diagnose-gradient-bar span{
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 1px solid black;
+    box-shadow: -10px 10px black;
+    padding: 1rem 2rem;
+    text-transform: uppercase;
+    font-size: 26px;
+    background-image: repeating-linear-gradient(45deg, #ffeebb 0, #ffeebb 1px, transparent 0, transparent 50%);
+    background-size: 14px 14px;
+    background-color: #ffffff;
+
 }
 
 .diagnose .diagnose-content {
@@ -837,11 +854,25 @@ nav .navbar-inner-container .navbar-hamburger-option .hamburger.clicked span:nth
     animation: heroGradient 10s ease infinite;
 }
 
+.dashboard .dashboard-gradient-bar span{
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 1px solid black;
+    box-shadow: -10px 10px black;
+    padding: 1rem 2rem;
+    text-transform: uppercase;
+    font-size: 26px;
+    background-image: repeating-linear-gradient(45deg, #ffeebb 0, #ffeebb 1px, transparent 0, transparent 50%);
+    background-size: 14px 14px;
+    background-color: #ffffff;
+}
+
 .dashboard .dashboard-gradient-bar {
     height: 200px;
     width: 100%;
-    display: grid;
-    place-items: center;
+    position: relative;
 }
 
 .dashboard .dashboard-content {
@@ -894,6 +925,22 @@ nav .navbar-inner-container .navbar-hamburger-option .hamburger.clicked span:nth
 .about .about-Gradient-Bar {
     height: 200px;
     width: 100%;
+    position: relative;
+}
+
+.about .about-Gradient-Bar span{
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 1px solid black;
+    box-shadow: -10px 10px black;
+    padding: 1rem 2rem;
+    text-transform: uppercase;
+    font-size: 26px;
+    background-image: repeating-linear-gradient(45deg, #ffeebb 0, #ffeebb 1px, transparent 0, transparent 50%);
+    background-size: 14px 14px;
+    background-color: #ffffff;    
 }
 
 .about .about-content {
@@ -913,7 +960,7 @@ nav .navbar-inner-container .navbar-hamburger-option .hamburger.clicked span:nth
     justify-content: space-evenly;
     min-height: 40vh;
     width: 90vw;
-    margin: 5rem auto;
+    margin: 3rem auto;
     clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
 }
 
@@ -936,7 +983,7 @@ nav .navbar-inner-container .navbar-hamburger-option .hamburger.clicked span:nth
     text-align: center;
 }
 
-.about .about-content .about-data-box:nth-child(odd) {
+.about .about-content .about-data-box:nth-child(even) {
     flex-direction: row-reverse;
 }
 

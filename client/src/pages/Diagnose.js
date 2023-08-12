@@ -200,7 +200,7 @@ export const Diagnose = () => {
             <Navbar/>
             <div className="diagnose">
                 <div className="diagnose-gradient-bar">
-                    <span>Diagnose</span>
+                    <span className="head-font">Diagnose</span>
                 </div>
                 <div className="diagnose-content">
                     <div className="diagnose-model-bar">

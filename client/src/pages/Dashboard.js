@@ -63,7 +63,9 @@ export const Dashboard = () => {
         <>
             <Navbar/>
             <div className="dashboard">
-                <div className="dashboard-gradient-bar"/>
+                <div className="dashboard-gradient-bar">
+                    <span className="head-font">Dashboard</span>
+                </div>
                 <div className="dashboard-content">
                     <div className="dashboard-header">
                         <span className="head-font">

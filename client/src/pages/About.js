@@ -25,11 +25,10 @@ export const About = () => {
         <>
             <Navbar/>
             <div className="about">
-                <div className="about-Gradient-Bar"/>
+                <div className="about-Gradient-Bar">
+                    <span className="head-font">About</span>
+                </div>
                 <div className="about-content">
-                    <div className="about-header">
-                        <span className="head-font">About Us</span>
-                    </div>
                     <div className="about-data-box" ref={db1}>
                         <div className="box-text">
                             <div className="text-header">
