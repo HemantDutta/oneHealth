@@ -1235,4 +1235,18 @@ nav .navbar-inner-container .navbar-hamburger-option .hamburger.clicked span:nth
     border: 1px solid black;
 }
 
+@media screen and (max-width: 650px) {
+    .about .about-content .about-data-box{
+        flex-direction: column-reverse;
+        gap: 1rem;
+    }
+
+    .about .about-content .about-data-box:nth-child(even){
+        flex-direction: column-reverse;
+        gap: 1rem;
+    }
+    .about .about-content{
+        padding: 10px;
+    }
+}
 /*==========About End==========*/
