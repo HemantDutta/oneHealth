@@ -633,7 +633,7 @@ nav .navbar-inner-container .navbar-hamburger-option .hamburger.clicked span:nth
 
 .one-alert .one-alert-container {
     background-color: #fff;
-    padding: 1rem;
+    padding: 2rem;
     box-shadow: -10px 10px black;
     position: relative;
     min-width: 200px;

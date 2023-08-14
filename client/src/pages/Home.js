@@ -16,6 +16,11 @@ export const Home = () => {
     //Session States
     const [sessionName, setSessionName] = useState('');
 
+    //Checks session whenever the login or logout function is called in the navbar
+    function handler() {
+        checkSession().then();
+    }
+
     //Check Session
     async function checkSession() {
         const sesEmail = getCookie("em");
@@ -38,7 +43,7 @@ export const Home = () => {
 
     return (
         <>
-            <Navbar joinNowTrigger={joinNowTrigger}/>
+            <Navbar joinNowTrigger={joinNowTrigger} handler={handler}/>
             <div className="home-container">
                 <section className="hero" id="hero">
                     <div className="hero-content">

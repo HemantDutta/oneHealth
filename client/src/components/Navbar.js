@@ -3,7 +3,7 @@ import {useEffect, useRef, useState} from "react";
 import supabase from "../config/supabaseClient";
 import {getCookie, setCookie, endSession} from "../config/cookieMaker";
 
-export const Navbar = ({joinNowTrigger}) => {
+export const Navbar = (props) => {
 
     //Navigator
     const nav = useNavigate();
@@ -71,12 +71,12 @@ export const Navbar = ({joinNowTrigger}) => {
     useEffect(() => {
         if (firstRender.current) {
             firstRender.current = false;
-        } else if (serviced < joinNowTrigger) {
+        } else if (serviced < props.joinNowTrigger) {
             console.log("Call From Home");
             toggleJoinNow();
-            setServiced(joinNowTrigger);
+            setServiced(props.joinNowTrigger);
         }
-    }, [joinNowTrigger])
+    }, [props.joinNowTrigger])
 
     //Click away to close Join Now
     function clickAwayJoinNow(e) {
@@ -236,6 +236,8 @@ export const Navbar = ({joinNowTrigger}) => {
     function loginUser() {
         setCookie("em", logMail, 3);
         checkSession().then();
+        props.handler();
+
     }
 
     //Check Session
@@ -263,6 +265,7 @@ export const Navbar = ({joinNowTrigger}) => {
     function logout() {
         endSession();
         setSessionName('');
+        props.handler();
     }
 
     return (

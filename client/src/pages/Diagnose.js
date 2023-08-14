@@ -42,7 +42,8 @@ export const Diagnose = () => {
     const [sessionID, setSessionID] = useState(0);
 
     //Sending Heart data to Flask
-    function uploadHeart() {
+    function uploadHeart(e) {
+        e.preventDefault();
         setLoader(true);
         let formData = new FormData();
         formData.append("age", age);
