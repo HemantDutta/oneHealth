@@ -519,6 +519,7 @@ nav .navbar-inner-container .navbar-hamburger-option .hamburger.clicked span:nth
     .home-container .hero .hero-content .hero-left .hero-left-head {
         font-size: 36px;
     }
+
     .home-container .hero .hero-content .hero-right .hero-right-img .hovering-msg:nth-child(2) {
         top: 30%;
         left: -5%;
@@ -531,12 +532,12 @@ nav .navbar-inner-container .navbar-hamburger-option .hamburger.clicked span:nth
 }
 
 @media screen and (max-width: 910px) {
-    .home-container .hero .hero-content{
+    .home-container .hero .hero-content {
         justify-content: flex-start;
         padding: 0 2rem;
     }
 
-    .home-container .hero .hero-content .hero-left{
+    .home-container .hero .hero-content .hero-left {
         flex-direction: column;
         z-index: 110;
         width: 100%;
@@ -546,62 +547,63 @@ nav .navbar-inner-container .navbar-hamburger-option .hamburger.clicked span:nth
         box-shadow: -10px 10px black;
     }
 
-    .home-container .hero .hero-content .hero-left .hero-left-head{
+    .home-container .hero .hero-content .hero-left .hero-left-head {
         width: 100%;
         font-size: 46px;
         border-radius: 0;
     }
 
-    .home-container .hero{
+    .home-container .hero {
         border-radius: 0;
     }
 
-    .home-container .hero .hero-content .hero-left .hero-left-cta button{
+    .home-container .hero .hero-content .hero-left .hero-left-cta button {
         border: 1px solid black;
     }
 
-    .home-container .hero .hero-content .hero-left .hero-left-branding span{
+    .home-container .hero .hero-content .hero-left .hero-left-branding span {
         color: black;
     }
 
 
-    .home-container .hero .hero-content .hero-right{
+    .home-container .hero .hero-content .hero-right {
         display: none;
     }
 }
 
 @media screen and (max-width: 645px) {
-    .home-container .hero .hero-content .hero-left .hero-left-head{
+    .home-container .hero .hero-content .hero-left .hero-left-head {
         font-size: 36px;
     }
 }
 
 @media screen and (max-width: 460px) {
-    .home-container .hero .hero-content .hero-left .hero-left-head{
+    .home-container .hero .hero-content .hero-left .hero-left-head {
         font-size: 32px;
         padding: 5px;
     }
-    .home-container .hero .hero-content{
+
+    .home-container .hero .hero-content {
         padding: 1rem;
     }
 }
 
 @media screen and (max-width: 320px) {
-    .home-container .hero .hero-content .hero-left .hero-left-head{
+    .home-container .hero .hero-content .hero-left .hero-left-head {
         font-size: 28px;
     }
 }
 
 @media screen and (max-width: 290px) {
-    .home-container .hero .hero-content .hero-left .hero-left-head{
+    .home-container .hero .hero-content .hero-left .hero-left-head {
         font-size: 20px;
     }
 
-    .home-container .hero .hero-content .hero-left .hero-left-branding span{
+    .home-container .hero .hero-content .hero-left .hero-left-branding span {
         font-size: 20px;
     }
 
-    .home-container .hero .hero-content{
+    .home-container .hero .hero-content {
         padding: 0;
     }
 }
@@ -776,7 +778,7 @@ nav .navbar-inner-container .navbar-hamburger-option .hamburger.clicked span:nth
     position: relative;
 }
 
-.diagnose .diagnose-gradient-bar span{
+.diagnose .diagnose-gradient-bar span {
     position: absolute;
     bottom: 10%;
     left: 50%;
@@ -947,19 +949,20 @@ nav .navbar-inner-container .navbar-hamburger-option .hamburger.clicked span:nth
         flex-wrap: wrap;
         gap: 1rem;
     }
+
     .diagnose .diagnose-content .model-header span {
         font-size: 36px;
     }
 }
 
 @media screen and (max-width: 450px) {
-    .diagnose .diagnose-content .tumor-model-content .model-form input{
+    .diagnose .diagnose-content .tumor-model-content .model-form input {
         width: 80vw;
     }
 }
 
 @media screen and (max-width: 400px) {
-    .diagnose .diagnose-content{
+    .diagnose .diagnose-content {
         padding: 2rem 1rem;
     }
 
@@ -967,11 +970,34 @@ nav .navbar-inner-container .navbar-hamburger-option .hamburger.clicked span:nth
         font-size: 26px;
     }
 
-    .diagnose .diagnose-content .model-des span{
+    .diagnose .diagnose-content .model-des span {
         font-size: 16px;
     }
-    .diagnose .diagnose-content .tumor-model-content .model-form input{
+
+    .diagnose .diagnose-content .tumor-model-content .model-form input {
         font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .diagnose .diagnose-content .heart-model-content .model-form, .diagnose .diagnose-content .diabetes-model-content .model-form {
+        width: 90vw;
+    }
+}
+
+@media screen and (max-width: 627px) {
+    .diagnose .diagnose-content .heart-model-content .model-form .input-row, .diagnose .diagnose-content .diabetes-model-content .model-form .input-row {
+        flex-direction: column;
+    }
+
+    .diagnose .diagnose-content .heart-model-content .model-form .input-row .input-field .full-select, .diagnose .diagnose-content .diabetes-model-content .model-form .input-row .input-field .full-select {
+        width: 90vw;
+    }
+}
+
+@media screen and (max-width: 300px) {
+    .diagnose .diagnose-content .heart-model-content .model-header span{
+        font-size: 20px;
     }
 }
 
@@ -987,7 +1013,7 @@ nav .navbar-inner-container .navbar-hamburger-option .hamburger.clicked span:nth
     animation: heroGradient 10s ease infinite;
 }
 
-.dashboard .dashboard-gradient-bar span{
+.dashboard .dashboard-gradient-bar span {
     position: absolute;
     bottom: 10%;
     left: 50%;
@@ -1030,7 +1056,7 @@ nav .navbar-inner-container .navbar-hamburger-option .hamburger.clicked span:nth
     font-size: 36px;
 }
 
-.dashboard .dashboard-content .dashboard-history .history-table{
+.dashboard .dashboard-content .dashboard-history .history-table {
     overflow-x: auto;
 }
 
@@ -1050,7 +1076,7 @@ nav .navbar-inner-container .navbar-hamburger-option .hamburger.clicked span:nth
 }
 
 @media screen and (max-width: 730px) {
-    .dashboard .dashboard-content .dashboard-history .history-table table{
+    .dashboard .dashboard-content .dashboard-history .history-table table {
         width: 80vw;
     }
 }
@@ -1059,10 +1085,12 @@ nav .navbar-inner-container .navbar-hamburger-option .hamburger.clicked span:nth
     .dashboard .dashboard-content .dashboard-header {
         font-size: 36px;
     }
+
     .dashboard .dashboard-content .dashboard-history .history-header {
         font-size: 26px;
     }
-    .dashboard .dashboard-content .dashboard-history{
+
+    .dashboard .dashboard-content .dashboard-history {
         width: auto;
     }
 }
@@ -1071,13 +1099,14 @@ nav .navbar-inner-container .navbar-hamburger-option .hamburger.clicked span:nth
     .dashboard .dashboard-content .dashboard-header {
         font-size: 20px;
     }
+
     .dashboard .dashboard-content .dashboard-history .history-header {
         font-size: 18px;
     }
 }
 
 @media screen and (max-width: 300px) {
-    .dashboard .dashboard-gradient-bar span{
+    .dashboard .dashboard-gradient-bar span {
         font-size: 20px;
     }
 }
@@ -1100,7 +1129,7 @@ nav .navbar-inner-container .navbar-hamburger-option .hamburger.clicked span:nth
     position: relative;
 }
 
-.about .about-Gradient-Bar span{
+.about .about-Gradient-Bar span {
     position: absolute;
     bottom: 10%;
     left: 50%;
@@ -1112,7 +1141,7 @@ nav .navbar-inner-container .navbar-hamburger-option .hamburger.clicked span:nth
     font-size: 26px;
     background-image: repeating-linear-gradient(45deg, #ffeebb 0, #ffeebb 1px, transparent 0, transparent 50%);
     background-size: 14px 14px;
-    background-color: #ffffff;    
+    background-color: #ffffff;
 }
 
 .about .about-content {
