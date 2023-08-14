@@ -42,12 +42,12 @@ export const Dashboard = () => {
     }, [sessionName])
 
     //Prediction History
-    async function getPrediction(){
+    async function getPrediction() {
         const {data, errors} = await supabase
             .from("predictions")
             .select()
             .eq("user_id", sessionID);
-        if(errors){
+        if (errors) {
             console.log(errors);
         }
         setHistory(data);
@@ -55,9 +55,9 @@ export const Dashboard = () => {
     }
 
     //Get Prediction Data
-    useEffect(()=>{
+    useEffect(() => {
         getPrediction().then();
-    },[sessionID])
+    }, [sessionID])
 
     return (
         <>
@@ -80,14 +80,17 @@ export const Dashboard = () => {
                             !loader &&
                             <div className="history-table">
                                 <table>
+                                    <thead>
                                     <tr>
                                         <th>Model</th>
                                         <th>Date & Time</th>
                                         <th>Prediction</th>
                                     </tr>
+                                    </thead>
+                                    <tbody>
                                     {
-                                        history.map((value,index)=>{
-                                            return(
+                                        history.map((value, index) => {
+                                            return (
                                                 <tr key={index}>
                                                     <td>{value.model}</td>
                                                     <td>{value.created_at}</td>
@@ -96,6 +99,7 @@ export const Dashboard = () => {
                                             )
                                         })
                                     }
+                                    </tbody>
                                 </table>
                             </div>
                         }

@@ -592,7 +592,7 @@ nav .navbar-inner-container .navbar-hamburger-option .hamburger.clicked span:nth
     }
 }
 
-@media screen and (max-width: 260px) {
+@media screen and (max-width: 290px) {
     .home-container .hero .hero-content .hero-left .hero-left-head{
         font-size: 20px;
     }
@@ -604,6 +604,10 @@ nav .navbar-inner-container .navbar-hamburger-option .hamburger.clicked span:nth
     .home-container .hero .hero-content{
         padding: 0;
     }
+}
+
+@media screen and(max-height: 750px) {
+
 }
 
 /*==========Home -> Hero End==========*/
@@ -994,6 +998,10 @@ nav .navbar-inner-container .navbar-hamburger-option .hamburger.clicked span:nth
     font-size: 36px;
 }
 
+.dashboard .dashboard-content .dashboard-history .history-table{
+    overflow-x: auto;
+}
+
 .dashboard .dashboard-content .dashboard-history .history-table table {
     margin-top: 1rem;
     background-color: #fff;
@@ -1001,10 +1009,45 @@ nav .navbar-inner-container .navbar-hamburger-option .hamburger.clicked span:nth
     border: 1px solid black;
     min-width: 500px;
     text-align: left;
+    border-collapse: collapse;
+    border-spacing: 0;
 }
 
 .dashboard .dashboard-content .dashboard-history .history-table table td, th {
     padding: 1rem;
+}
+
+@media screen and (max-width: 730px) {
+    .dashboard .dashboard-content .dashboard-history .history-table table{
+        width: 80vw;
+    }
+}
+
+@media screen and (max-width: 565px) {
+    .dashboard .dashboard-content .dashboard-header {
+        font-size: 36px;
+    }
+    .dashboard .dashboard-content .dashboard-history .history-header {
+        font-size: 26px;
+    }
+    .dashboard .dashboard-content .dashboard-history{
+        width: auto;
+    }
+}
+
+@media screen and (max-width: 370px) {
+    .dashboard .dashboard-content .dashboard-header {
+        font-size: 20px;
+    }
+    .dashboard .dashboard-content .dashboard-history .history-header {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 300px) {
+    .dashboard .dashboard-gradient-bar span{
+        font-size: 20px;
+    }
 }
 
 /*==========Dashboard End==========*/
