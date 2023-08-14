@@ -719,6 +719,16 @@ nav .navbar-inner-container .navbar-hamburger-option .hamburger.clicked span:nth
     color: var(--accent-color2);
 }
 
+@media screen and (max-width: 500px) {
+    .joinNow .joinNow-content .login-form-header{
+        font-size: 36px;
+    }
+
+    .joinNow .joinNow-content{
+        padding: 15px;
+    }
+}
+
 /*==========Navbar -> Join Now End==========*/
 
 /*==========One Alert==========*/
