@@ -237,7 +237,6 @@ export const Navbar = (props) => {
         setCookie("em", logMail, 3);
         checkSession().then();
         props.handler();
-
     }
 
     //Check Session
@@ -249,8 +248,6 @@ export const Navbar = (props) => {
                 .select()
                 .eq("email", sesEmail);
             setSessionName(data[0].name);
-        } else {
-            nav('/');
         }
     }
 

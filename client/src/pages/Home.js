@@ -31,6 +31,8 @@ export const Home = () => {
                 .eq("email", sesEmail);
 
             setSessionName(data[0].name);
+        } else{
+            setSessionName('');
         }
     }
 

@@ -66,11 +66,13 @@ export const Diagnose = () => {
                 setTimeout(() => {
                     setLoader(false);
                 }, 500)
-                const {status} = await supabase
-                    .from("predictions")
-                    .insert({user_id: sessionID, model: "Heart Disease", prediction: res.data})
-                if (status === 201) {
-                    console.log("Prediction Stored");
+                if(sessionID){
+                    const {status} = await supabase
+                        .from("predictions")
+                        .insert({user_id: sessionID, model: "Heart Disease", prediction: res.data})
+                    if (status === 201) {
+                        console.log("Prediction Stored");
+                    }
                 }
             })
             .catch((err) => {
@@ -96,16 +98,23 @@ export const Diagnose = () => {
                 setTimeout(() => {
                     setLoader(false);
                 }, 500)
-                const {status} = await supabase
-                    .from("predictions")
-                    .insert({user_id: sessionID, model: "Brain Tumor", prediction: res.data})
-                if (status === 201) {
-                    console.log("Prediction Stored");
+                if(sessionID){
+                    const {status} = await supabase
+                        .from("predictions")
+                        .insert({user_id: sessionID, model: "Brain Tumor", prediction: res.data})
+                    if (status === 201) {
+                        console.log("Prediction Stored");
+                    }
                 }
             })
             .catch((err) => {
                 console.log(err);
             })
+    }
+
+    //Login/Logout handler Function
+    function handler(){
+        checkSession().then();
     }
 
     //Calling uploadBrain on setState
@@ -184,8 +193,6 @@ export const Diagnose = () => {
 
             setSessionName(data[0].name);
             setSessionID(data[0].id);
-        } else {
-            nav("/");
         }
     }
 
@@ -198,7 +205,7 @@ export const Diagnose = () => {
 
     return (
         <>
-            <Navbar/>
+            <Navbar handler={handler}/>
             <div className="diagnose">
                 <div className="diagnose-gradient-bar">
                     <span className="head-font">Diagnose</span>

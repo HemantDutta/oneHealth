@@ -21,9 +21,14 @@ export const About = () => {
             .from(db2.current, {duration: 1, delay: 0.4, ease:"power4.in", clipPath: "polygon(0 81%, 100% 81%, 100% 100%, 0% 100%)"})
     },[])
 
+    //Dummy handler function
+    function handler(){
+        //Nothing to handle lol
+    }
+
     return(
         <>
-            <Navbar/>
+            <Navbar handler={handler}/>
             <div className="about">
                 <div className="about-Gradient-Bar">
                     <span className="head-font">About</span>
