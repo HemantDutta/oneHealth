@@ -484,12 +484,6 @@ nav .navbar-inner-container .navbar-hamburger-option .hamburger.clicked span:nth
     }
 }
 
-@media screen and (max-width: 1091px) {
-    .home-container .hero .hero-content .hero-left .hero-left-head {
-        font-size: 36px;
-    }
-}
-
 .home-container .hero .hero-content .hero-left a.hero-left-branding {
     display: flex;
     align-items: center;
@@ -507,6 +501,109 @@ nav .navbar-inner-container .navbar-hamburger-option .hamburger.clicked span:nth
 .home-container .hero .hero-content .hero-left .hero-left-branding img {
     height: 80px;
     box-shadow: -10px 10px black;
+}
+
+@media screen and (max-width: 1421px) {
+    .home-container .hero .hero-content .hero-right .hero-right-img .hovering-msg:nth-child(2) {
+        top: 30%;
+        left: 3%;
+    }
+
+    .home-container .hero .hero-content .hero-right .hero-right-img .hovering-msg:nth-child(3) {
+        bottom: 30%;
+        right: 3%;
+    }
+}
+
+@media screen and (max-width: 1151px) {
+    .home-container .hero .hero-content .hero-left .hero-left-head {
+        font-size: 36px;
+    }
+    .home-container .hero .hero-content .hero-right .hero-right-img .hovering-msg:nth-child(2) {
+        top: 30%;
+        left: -5%;
+    }
+
+    .home-container .hero .hero-content .hero-right .hero-right-img .hovering-msg:nth-child(3) {
+        bottom: 30%;
+        right: -5%;
+    }
+}
+
+@media screen and (max-width: 910px) {
+    .home-container .hero .hero-content{
+        justify-content: flex-start;
+        padding: 0 2rem;
+    }
+
+    .home-container .hero .hero-content .hero-left{
+        flex-direction: column;
+        z-index: 110;
+        width: 100%;
+        flex-basis: 100%;
+        background: white;
+        padding: 1rem;
+        box-shadow: -10px 10px black;
+    }
+
+    .home-container .hero .hero-content .hero-left .hero-left-head{
+        width: 100%;
+        font-size: 46px;
+        border-radius: 0;
+    }
+
+    .home-container .hero{
+        border-radius: 0;
+    }
+
+    .home-container .hero .hero-content .hero-left .hero-left-cta button{
+        border: 1px solid black;
+    }
+
+    .home-container .hero .hero-content .hero-left .hero-left-branding span{
+        color: black;
+    }
+
+
+    .home-container .hero .hero-content .hero-right{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 645px) {
+    .home-container .hero .hero-content .hero-left .hero-left-head{
+        font-size: 36px;
+    }
+}
+
+@media screen and (max-width: 460px) {
+    .home-container .hero .hero-content .hero-left .hero-left-head{
+        font-size: 32px;
+        padding: 5px;
+    }
+    .home-container .hero .hero-content{
+        padding: 1rem;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .home-container .hero .hero-content .hero-left .hero-left-head{
+        font-size: 28px;
+    }
+}
+
+@media screen and (max-width: 260px) {
+    .home-container .hero .hero-content .hero-left .hero-left-head{
+        font-size: 20px;
+    }
+
+    .home-container .hero .hero-content .hero-left .hero-left-branding span{
+        font-size: 20px;
+    }
+
+    .home-container .hero .hero-content{
+        padding: 0;
+    }
 }
 
 /*==========Home -> Hero End==========*/
